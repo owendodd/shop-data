@@ -1,31 +1,26 @@
-import { once, showUI } from '@create-figma-plugin/utilities'
+import { loadFontsAsync } from "@create-figma-plugin/utilities";
+import { once, showUI } from "@create-figma-plugin/utilities";
 
-import { CloseHandler, CreateRectanglesHandler } from './types'
+import { CloseHandler, CreatePopulateDataHandler } from "./types";
+
+import { setText } from "./utilities/set-text";
+import { getSelectedTextNodes } from "./utilities/get-text-nodes";
+import { DataMap, dataMap } from "./utilities/data-map";
 
 export default function () {
-  once<CreateRectanglesHandler>('CREATE_RECTANGLES', function (count: number) {
-    const nodes: Array<SceneNode> = []
-    for (let i = 0; i < count; i++) {
-      const rect = figma.createRectangle()
-      rect.x = i * 150
-      rect.fills = [
-        {
-          color: { b: 0, g: 0.5, r: 1 },
-          type: 'SOLID'
-        }
-      ]
-      figma.currentPage.appendChild(rect)
-      nodes.push(rect)
-    }
-    figma.currentPage.selection = nodes
-    figma.viewport.scrollAndZoomIntoView(nodes)
-    figma.closePlugin()
-  })
-  once<CloseHandler>('CLOSE', function () {
-    figma.closePlugin()
-  })
+  once<CreatePopulateDataHandler>("CREATE_POPULATE_DATA", async function () {
+    console.log("CREATE_POPULATE_DATA event received");
+    const nodes = getSelectedTextNodes();
+    await setText(nodes, dataMap);
+    figma.closePlugin();
+  });
+
+  once<CloseHandler>("CLOSE", function () {
+    figma.closePlugin();
+  });
+
   showUI({
-    height: 137,
-    width: 240
-  })
+    height: 165,
+    width: 240,
+  });
 }
