@@ -83,6 +83,35 @@ var init_events = __esm({
   }
 });
 
+// node_modules/@create-figma-plugin/utilities/lib/node/absolute-position/get-absolute-position.js
+function getAbsolutePosition(node) {
+  return {
+    x: node.absoluteTransform[0][2],
+    y: node.absoluteTransform[1][2]
+  };
+}
+var init_get_absolute_position = __esm({
+  "node_modules/@create-figma-plugin/utilities/lib/node/absolute-position/get-absolute-position.js"() {
+  }
+});
+
+// node_modules/@create-figma-plugin/utilities/lib/node/traverse-node.js
+function traverseNode(node, processNode, stopTraversal) {
+  if (node.removed === true) {
+    return;
+  }
+  if ("children" in node && (typeof stopTraversal !== "function" || stopTraversal(node) === false)) {
+    for (const childNode of node.children) {
+      traverseNode(childNode, processNode, stopTraversal);
+    }
+  }
+  processNode(node);
+}
+var init_traverse_node = __esm({
+  "node_modules/@create-figma-plugin/utilities/lib/node/traverse-node.js"() {
+  }
+});
+
 // node_modules/@create-figma-plugin/utilities/lib/node/load-fonts-async.js
 async function loadFontsAsync(nodes) {
   const result = {};
@@ -152,28 +181,77 @@ var init_ui = __esm({
 var init_lib = __esm({
   "node_modules/@create-figma-plugin/utilities/lib/index.js"() {
     init_events();
+    init_get_absolute_position();
     init_load_fonts_async();
+    init_traverse_node();
     init_ui();
   }
 });
 
 // src/utilities/set-text.ts
-async function setText(nodes, dataMap2) {
-  await loadFontsAsync(nodes);
-  for (const node of nodes) {
-    const layerName = node.name;
-    console.log(layerName);
-    const data = dataMap2[layerName];
-    if (data && layerName) {
-      const randomIndex = Math.floor(Math.random() * data.length);
-      node.characters = data[randomIndex];
-    }
+async function setText(node, dataMap2) {
+  await loadFontsAsync(node);
+  if (node.type === "TEXT" && node.name in dataMap2) {
+    const data = dataMap2[node.name];
+    node.characters = data[0];
   }
 }
 var init_set_text = __esm({
   "src/utilities/set-text.ts"() {
     "use strict";
     init_lib();
+    s;
+  }
+});
+
+// src/utilities/sort-nodes-by-position.ts
+function sortNodesByPosition(nodes, axis) {
+  const parent = nodes[0].parent;
+  if (parent === null) {
+    throw new Error("Node has no parent");
+  }
+  const orthogonalAxis = axis === "x" ? "y" : "x";
+  const result = nodes.slice().sort(function(a, b) {
+    const aAbsolutePosition = getAbsolutePosition(a);
+    const bAbsolutePosition = getAbsolutePosition(b);
+    if (aAbsolutePosition[axis] !== bAbsolutePosition[axis]) {
+      return aAbsolutePosition[axis] - bAbsolutePosition[axis];
+    }
+    if (aAbsolutePosition[orthogonalAxis] !== bAbsolutePosition[orthogonalAxis]) {
+      return aAbsolutePosition[orthogonalAxis] - bAbsolutePosition[orthogonalAxis];
+    }
+    return 0;
+  });
+  return result;
+}
+var init_sort_nodes_by_position = __esm({
+  "src/utilities/sort-nodes-by-position.ts"() {
+    "use strict";
+    init_lib();
+  }
+});
+
+// src/utilities/get-product-nodes.ts
+function getSelectedProductNodes() {
+  const result = [];
+  const nodes = figma.currentPage.selection.slice();
+  for (const node of nodes) {
+    traverseNode(node, function(node2) {
+      if (node2.name && node2.name === "product") {
+        result.push(node2);
+      }
+    });
+  }
+  if (result.length === 0) {
+    return [];
+  }
+  return sortNodesByPosition(result, "y");
+}
+var init_get_product_nodes = __esm({
+  "src/utilities/get-product-nodes.ts"() {
+    "use strict";
+    init_lib();
+    init_sort_nodes_by_position();
   }
 });
 
@@ -185,36 +263,42 @@ var init_data_map = __esm({
     dataMap = {
       "product": [
         {
+          index: 1,
           productName: "iPhone 13 Pro Max",
           merchantName: "Apple",
           productPrice: "1099",
           productImage: "https://cdn.pixabay.com/photo/2021/09/15/09/27/iphone-13-6627666_1280.jpg"
         },
         {
+          index: 2,
           productName: "Samsung Galaxy S21 Ultra",
           merchantName: "Samsung",
           productPrice: "1199",
           productImage: "https://cdn.pixabay.com/photo/2021/02/01/20/09/samsung-galaxy-s21-ultra-5977682_1280.jpg"
         },
         {
+          index: 3,
           productName: "Sony PlayStation 5",
           merchantName: "Best Buy",
           productPrice: "499",
           productImage: "https://cdn.pixabay.com/photo/2021/01/22/16/31/playstation-5-5949772_1280.jpg"
         },
         {
+          index: 4,
           productName: "Bose QuietComfort 35 II",
           merchantName: "Amazon",
           productPrice: "299",
           productImage: "https://cdn.pixabay.com/photo/2018/05/31/16/06/bose-3445097_1280.jpg"
         },
         {
+          index: 5,
           productName: "Nintendo Switch",
           merchantName: "Walmart",
           productPrice: "299",
           productImage: "https://cdn.pixabay.com/photo/2020/04/08/18/51/nintendo-switch-5027586_1280.jpg"
         },
         {
+          index: 6,
           productName: "LG OLED TV",
           merchantName: "Costco",
           productPrice: "1499",
@@ -232,11 +316,11 @@ __export(main_exports, {
   default: () => main_default
 });
 function main_default() {
-  once("CREATE_POPULATE_DATA", async function() {
-    console.log("CREATE_POPULATE_DATA event received");
-    const nodes = findAllWithCriteria({ type: "TEXT" });
-    await setText(nodes, dataMap);
-    figma.closePlugin();
+  on("CREATE_POPULATE_DATA", async function() {
+    const nodes = getSelectedProductNodes();
+    for (const node of nodes) {
+      await setText(node, dataMap);
+    }
   });
   once("CLOSE", function() {
     figma.closePlugin();
@@ -251,6 +335,7 @@ var init_main = __esm({
     "use strict";
     init_lib();
     init_set_text();
+    init_get_product_nodes();
     init_data_map();
   }
 });

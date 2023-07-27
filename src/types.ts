@@ -15,6 +15,7 @@ export interface DataMap {
 }
 
 export interface Product {
+  index: number;
   productName: string;
   merchantName: string;
   productPrice: string;

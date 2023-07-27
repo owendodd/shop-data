@@ -1,18 +1,14 @@
 import { loadFontsAsync } from "@create-figma-plugin/utilities";
-import { DataMap, Product } from "../types";
+import { DataMap } from "../types";
 
 export async function setText(
-  nodes: Array<TextNode>,
+  node: SceneNode, 
   dataMap: DataMap
 ): Promise<void> {
-  await loadFontsAsync(nodes);
-  for (const node of nodes) {
-    const layerName = node.name;
-    console.log(layerName);
-    const data = dataMap[layerName];
-    if (data && layerName) {
-      const randomIndex = Math.floor(Math.random() * data.length);
-      node.characters = data[randomIndex];
-    }
+  await loadFontsAsync(node);
+  if (node.type === "TEXT" && node.name in dataMap) {
+    const data = dataMap[node.name];
+    node.characters = data[0];
   }
-}
+
+}s

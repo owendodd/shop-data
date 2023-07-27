@@ -3,36 +3,42 @@ import { DataMap, Product } from "../types";
 export const dataMap: DataMap = {
   "product": [
     {
+      index: 1,
       productName: "iPhone 13 Pro Max",
       merchantName: "Apple",
       productPrice: "1099",
       productImage: "https://cdn.pixabay.com/photo/2021/09/15/09/27/iphone-13-6627666_1280.jpg",
     },
     {
+      index: 2,
       productName: "Samsung Galaxy S21 Ultra",
       merchantName: "Samsung",
       productPrice: "1199",
       productImage: "https://cdn.pixabay.com/photo/2021/02/01/20/09/samsung-galaxy-s21-ultra-5977682_1280.jpg",
     },
     {
+      index: 3,
       productName: "Sony PlayStation 5",
       merchantName: "Best Buy",
       productPrice: "499",
       productImage: "https://cdn.pixabay.com/photo/2021/01/22/16/31/playstation-5-5949772_1280.jpg",
     },
     {
+      index: 4,
       productName: "Bose QuietComfort 35 II",
       merchantName: "Amazon",
       productPrice: "299",
       productImage: "https://cdn.pixabay.com/photo/2018/05/31/16/06/bose-3445097_1280.jpg",
     },
     {
+      index: 5,
       productName: "Nintendo Switch",
       merchantName: "Walmart",
       productPrice: "299",
       productImage: "https://cdn.pixabay.com/photo/2020/04/08/18/51/nintendo-switch-5027586_1280.jpg",
     },
     {
+      index: 6,
       productName: "LG OLED TV",
       merchantName: "Costco",
       productPrice: "1499",
