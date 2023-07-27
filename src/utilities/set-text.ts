@@ -1,8 +1,5 @@
 import { loadFontsAsync } from "@create-figma-plugin/utilities";
-
-interface DataMap {
-  [layerName: string]: Array<string>;
-}
+import { DataMap, Product } from "../types";
 
 export async function setText(
   nodes: Array<TextNode>,

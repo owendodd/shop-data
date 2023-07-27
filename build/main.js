@@ -83,35 +83,6 @@ var init_events = __esm({
   }
 });
 
-// node_modules/@create-figma-plugin/utilities/lib/node/absolute-position/get-absolute-position.js
-function getAbsolutePosition(node) {
-  return {
-    x: node.absoluteTransform[0][2],
-    y: node.absoluteTransform[1][2]
-  };
-}
-var init_get_absolute_position = __esm({
-  "node_modules/@create-figma-plugin/utilities/lib/node/absolute-position/get-absolute-position.js"() {
-  }
-});
-
-// node_modules/@create-figma-plugin/utilities/lib/node/traverse-node.js
-function traverseNode(node, processNode, stopTraversal) {
-  if (node.removed === true) {
-    return;
-  }
-  if ("children" in node && (typeof stopTraversal !== "function" || stopTraversal(node) === false)) {
-    for (const childNode of node.children) {
-      traverseNode(childNode, processNode, stopTraversal);
-    }
-  }
-  processNode(node);
-}
-var init_traverse_node = __esm({
-  "node_modules/@create-figma-plugin/utilities/lib/node/traverse-node.js"() {
-  }
-});
-
 // node_modules/@create-figma-plugin/utilities/lib/node/load-fonts-async.js
 async function loadFontsAsync(nodes) {
   const result = {};
@@ -181,9 +152,7 @@ var init_ui = __esm({
 var init_lib = __esm({
   "node_modules/@create-figma-plugin/utilities/lib/index.js"() {
     init_events();
-    init_get_absolute_position();
     init_load_fonts_async();
-    init_traverse_node();
     init_ui();
   }
 });
@@ -208,85 +177,50 @@ var init_set_text = __esm({
   }
 });
 
-// src/utilities/sort-nodes-by-position.ts
-function sortNodesByPosition(nodes, axis) {
-  const parent = nodes[0].parent;
-  if (parent === null) {
-    throw new Error("Node has no parent");
-  }
-  const orthogonalAxis = axis === "x" ? "y" : "x";
-  const result = nodes.slice().sort(function(a, b) {
-    const aAbsolutePosition = getAbsolutePosition(a);
-    const bAbsolutePosition = getAbsolutePosition(b);
-    if (aAbsolutePosition[axis] !== bAbsolutePosition[axis]) {
-      return aAbsolutePosition[axis] - bAbsolutePosition[axis];
-    }
-    if (aAbsolutePosition[orthogonalAxis] !== bAbsolutePosition[orthogonalAxis]) {
-      return aAbsolutePosition[orthogonalAxis] - bAbsolutePosition[orthogonalAxis];
-    }
-    return 0;
-  });
-  return result;
-}
-var init_sort_nodes_by_position = __esm({
-  "src/utilities/sort-nodes-by-position.ts"() {
-    "use strict";
-    init_lib();
-  }
-});
-
-// src/utilities/get-text-nodes.ts
-function getSelectedTextNodes() {
-  const result = [];
-  const nodes = figma.currentPage.selection.slice();
-  for (const node of nodes) {
-    traverseNode(node, function(node2) {
-      if (node2.type === "TEXT" && node2.characters.trim().length > 0) {
-        result.push(node2);
-      }
-    });
-  }
-  if (result.length === 0) {
-    return [];
-  }
-  return sortNodesByPosition(result, "y");
-}
-var init_get_text_nodes = __esm({
-  "src/utilities/get-text-nodes.ts"() {
-    "use strict";
-    init_lib();
-    init_sort_nodes_by_position();
-  }
-});
-
 // src/utilities/data-map.ts
 var dataMap;
 var init_data_map = __esm({
   "src/utilities/data-map.ts"() {
     "use strict";
     dataMap = {
-      "#merchant-name": ["Walmart", "Target", "Amazon", "Best Buy", "Costco", "Home Depot", "Lowe's", "Walgreens", "CVS"],
-      "#product-name": [
-        "iPhone 13 Pro Max",
-        "Samsung Galaxy S21 Ultra",
-        "Sony PlayStation 5",
-        "Microsoft Xbox Series X",
-        "LG OLED TV",
-        "Bose QuietComfort 35 II",
-        "Apple AirPods Pro",
-        "Fitbit Charge 5",
-        "Dyson V11 Absolute",
-        "Instant Pot Duo Nova",
-        "Nespresso Vertuo Coffee Maker",
-        "KitchenAid Stand Mixer",
-        "Cuisinart Food Processor",
-        "Vitamix Blender",
-        "Calphalon Cookware Set",
-        "iRobot Roomba Vacuum",
-        "Serta Perfect Sleeper Mattress",
-        "Brooklinen Luxe Sheet Set",
-        "Allswell Hybrid Mattress",
-        "Tuft & Needle Original Mattress"
+      "product": [
+        {
+          productName: "iPhone 13 Pro Max",
+          merchantName: "Apple",
+          productPrice: "1099",
+          productImage: "https://cdn.pixabay.com/photo/2021/09/15/09/27/iphone-13-6627666_1280.jpg"
+        },
+        {
+          productName: "Samsung Galaxy S21 Ultra",
+          merchantName: "Samsung",
+          productPrice: "1199",
+          productImage: "https://cdn.pixabay.com/photo/2021/02/01/20/09/samsung-galaxy-s21-ultra-5977682_1280.jpg"
+        },
+        {
+          productName: "Sony PlayStation 5",
+          merchantName: "Best Buy",
+          productPrice: "499",
+          productImage: "https://cdn.pixabay.com/photo/2021/01/22/16/31/playstation-5-5949772_1280.jpg"
+        },
+        {
+          productName: "Bose QuietComfort 35 II",
+          merchantName: "Amazon",
+          productPrice: "299",
+          productImage: "https://cdn.pixabay.com/photo/2018/05/31/16/06/bose-3445097_1280.jpg"
+        },
+        {
+          productName: "Nintendo Switch",
+          merchantName: "Walmart",
+          productPrice: "299",
+          productImage: "https://cdn.pixabay.com/photo/2020/04/08/18/51/nintendo-switch-5027586_1280.jpg"
+        },
+        {
+          productName: "LG OLED TV",
+          merchantName: "Costco",
+          productPrice: "1499",
+          productImage: "https://cdn.pixabay.com/photo/2021/06/08/18/17/lg-oled-tv-6323071_1280.jpg"
+        }
+        // Add more products here
       ]
     };
   }
@@ -300,7 +234,7 @@ __export(main_exports, {
 function main_default() {
   once("CREATE_POPULATE_DATA", async function() {
     console.log("CREATE_POPULATE_DATA event received");
-    const nodes = getSelectedTextNodes();
+    const nodes = findAllWithCriteria({ type: "TEXT" });
     await setText(nodes, dataMap);
     figma.closePlugin();
   });
@@ -317,7 +251,6 @@ var init_main = __esm({
     "use strict";
     init_lib();
     init_set_text();
-    init_get_text_nodes();
     init_data_map();
   }
 });

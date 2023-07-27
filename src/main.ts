@@ -10,7 +10,7 @@ import { DataMap, dataMap } from "./utilities/data-map";
 export default function () {
   once<CreatePopulateDataHandler>("CREATE_POPULATE_DATA", async function () {
     console.log("CREATE_POPULATE_DATA event received");
-    const nodes = getSelectedTextNodes();
+    const nodes = findAllWithCriteria({ type: "TEXT" });
     await setText(nodes, dataMap);
     figma.closePlugin();
   });

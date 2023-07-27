@@ -9,3 +9,14 @@ export interface CloseHandler extends EventHandler {
   name: 'CLOSE'
   handler: () => void
 }
+
+export interface DataMap {
+  [layerName: string]: Array<Product>;
+}
+
+export interface Product {
+  productName: string;
+  merchantName: string;
+  productPrice: string;
+  productImage: string;
+}

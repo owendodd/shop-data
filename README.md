@@ -1,4 +1,4 @@
-# Preact Rectangles
+# Shop Data
 
 ## Development guide
 
