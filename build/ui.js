@@ -477,10 +477,10 @@
     }
   });
 
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/bda9304b-9d2f-42c7-8621-95027e69ba3d/loading-indicator.module.js
+  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/79abce29-07be-4831-8231-5bdf0c90f980/loading-indicator.module.js
   var loading_indicator_module_default;
   var init_loading_indicator_module = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/bda9304b-9d2f-42c7-8621-95027e69ba3d/loading-indicator.module.js"() {
+    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/79abce29-07be-4831-8231-5bdf0c90f980/loading-indicator.module.js"() {
       if (document.getElementById("6a947c4272") === null) {
         const element = document.createElement("style");
         element.id = "6a947c4272";
@@ -539,10 +539,10 @@
     }
   });
 
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/4d492acb-1572-4b55-9042-09a784c73318/button.module.js
+  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/6d5574e7-590e-478e-bbe4-fce027cc0161/button.module.js
   var button_module_default;
   var init_button_module = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/4d492acb-1572-4b55-9042-09a784c73318/button.module.js"() {
+    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/6d5574e7-590e-478e-bbe4-fce027cc0161/button.module.js"() {
       if (document.getElementById("266a3d7ddd") === null) {
         const element = document.createElement("style");
         element.id = "266a3d7ddd";
@@ -767,10 +767,10 @@
     }
   });
 
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/fdffc50a-e3c7-4b28-a660-66ae014aad65/container.module.js
+  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/11318314-94e6-40b3-b247-43871383026d/container.module.js
   var container_module_default;
   var init_container_module = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/fdffc50a-e3c7-4b28-a660-66ae014aad65/container.module.js"() {
+    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/11318314-94e6-40b3-b247-43871383026d/container.module.js"() {
       if (document.getElementById("2c2d94c5f9") === null) {
         const element = document.createElement("style");
         element.id = "2c2d94c5f9";
@@ -809,10 +809,10 @@
     }
   });
 
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/6635880d-f5a7-4171-81c9-7a7b0412bedf/vertical-space.module.js
+  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/ae4f6043-61ce-4201-86dc-bd7b5d3407d2/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/6635880d-f5a7-4171-81c9-7a7b0412bedf/vertical-space.module.js"() {
+    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/ae4f6043-61ce-4201-86dc-bd7b5d3407d2/vertical-space.module.js"() {
       if (document.getElementById("9022860d04") === null) {
         const element = document.createElement("style");
         element.id = "9022860d04";
@@ -851,9 +851,9 @@
     }
   });
 
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/4f43ce12-00d5-4865-b77b-63c5e1f9173a/base.js
+  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/c4c54c49-f5ae-4dd8-940e-f97e456dc8cf/base.js
   var init_base = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/4f43ce12-00d5-4865-b77b-63c5e1f9173a/base.js"() {
+    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/c4c54c49-f5ae-4dd8-940e-f97e456dc8cf/base.js"() {
       if (document.getElementById("417038d6a2") === null) {
         const element = document.createElement("style");
         element.id = "417038d6a2";
@@ -1008,7 +1008,7 @@ svg {
     }
     ;
     function handleCreatePopulateDataButtonClick() {
-      console.log("CREATE_POPULATE_DATA event emitted");
+      console.log("event emitted");
       emit("CREATE_POPULATE_DATA");
     }
     return /* @__PURE__ */ y(Container, { space: "large" }, /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Button, { fullWidth: true, onClick: handleCreatePopulateDataButtonClick }, "Populate"), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y(Button, { fullWidth: true, onClick: handleCloseButtonClick, secondary: true }, "Close"), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }));

@@ -32,7 +32,7 @@ function Plugin() {
   };
   
   function handleCreatePopulateDataButtonClick() {
-    console.log("CREATE_POPULATE_DATA event emitted");
+    console.log("event emitted");
     emit("CREATE_POPULATE_DATA");
   }
 

@@ -189,18 +189,24 @@ var init_lib = __esm({
 });
 
 // src/utilities/set-text.ts
-async function setText(node, dataMap2) {
-  await loadFontsAsync(node);
-  if (node.type === "TEXT" && node.name in dataMap2) {
-    const data = dataMap2[node.name];
-    node.characters = data[0];
+async function setText(nodes, dataMap2) {
+  console.log("setting text");
+  const result = [];
+  await loadFontsAsync(nodes);
+  for (const node of nodes) {
+    node.traverseNode(node, function(node2) {
+      if (node2.type === "TEXT") {
+        console.log("BINGO!");
+        result.push(node2);
+      }
+    });
   }
+  return result;
 }
 var init_set_text = __esm({
   "src/utilities/set-text.ts"() {
     "use strict";
     init_lib();
-    s;
   }
 });
 
@@ -317,10 +323,12 @@ __export(main_exports, {
 });
 function main_default() {
   on("CREATE_POPULATE_DATA", async function() {
+    console.log("event received");
     const nodes = getSelectedProductNodes();
-    for (const node of nodes) {
-      await setText(node, dataMap);
-    }
+    nodes.forEach(async (node) => {
+      console.log("node found");
+      await setText(nodes, dataMap);
+    });
   });
   once("CLOSE", function() {
     figma.closePlugin();
