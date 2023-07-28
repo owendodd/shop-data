@@ -27,12 +27,10 @@ function Plugin() {
 
   function handleChange(event: JSX.TargetedEvent<HTMLInputElement>) {
     const newValue = event.currentTarget.value;
-    console.log(newValue);
     setValue(newValue);
   };
   
   function handleCreatePopulateDataButtonClick() {
-    console.log("event emitted");
     emit("CREATE_POPULATE_DATA");
   }
 

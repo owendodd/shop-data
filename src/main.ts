@@ -6,11 +6,9 @@ import { dataMap } from "./utilities/data-map";
 
 export default function () {
   on<CreatePopulateDataHandler>("CREATE_POPULATE_DATA", async function () {
-    console.log("event received");
     const nodes = getSelectedProductNodes();
-    nodes.forEach(async (node: SceneNode) => {
-      console.log("node found");
-      await setText(nodes, dataMap);
+    nodes.forEach(async (node, index) => {
+      await setText(node, dataMap, index);
     });
     // figma.closePlugin();
   });

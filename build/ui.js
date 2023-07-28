@@ -477,10 +477,10 @@
     }
   });
 
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/79abce29-07be-4831-8231-5bdf0c90f980/loading-indicator.module.js
+  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/ace444a0-eacc-453c-afbd-e18ba4691578/loading-indicator.module.js
   var loading_indicator_module_default;
   var init_loading_indicator_module = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/79abce29-07be-4831-8231-5bdf0c90f980/loading-indicator.module.js"() {
+    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/ace444a0-eacc-453c-afbd-e18ba4691578/loading-indicator.module.js"() {
       if (document.getElementById("6a947c4272") === null) {
         const element = document.createElement("style");
         element.id = "6a947c4272";
@@ -539,10 +539,10 @@
     }
   });
 
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/6d5574e7-590e-478e-bbe4-fce027cc0161/button.module.js
+  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/ea1680a2-89af-4174-b270-b71eadcc3f29/button.module.js
   var button_module_default;
   var init_button_module = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/6d5574e7-590e-478e-bbe4-fce027cc0161/button.module.js"() {
+    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/ea1680a2-89af-4174-b270-b71eadcc3f29/button.module.js"() {
       if (document.getElementById("266a3d7ddd") === null) {
         const element = document.createElement("style");
         element.id = "266a3d7ddd";
@@ -767,10 +767,10 @@
     }
   });
 
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/11318314-94e6-40b3-b247-43871383026d/container.module.js
+  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/d936fd07-f906-41f7-8a95-ecea4040d644/container.module.js
   var container_module_default;
   var init_container_module = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/11318314-94e6-40b3-b247-43871383026d/container.module.js"() {
+    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/d936fd07-f906-41f7-8a95-ecea4040d644/container.module.js"() {
       if (document.getElementById("2c2d94c5f9") === null) {
         const element = document.createElement("style");
         element.id = "2c2d94c5f9";
@@ -809,10 +809,10 @@
     }
   });
 
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/ae4f6043-61ce-4201-86dc-bd7b5d3407d2/vertical-space.module.js
+  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/cc0e20f8-7a74-4a50-bb2c-09a3e4541430/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/ae4f6043-61ce-4201-86dc-bd7b5d3407d2/vertical-space.module.js"() {
+    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/cc0e20f8-7a74-4a50-bb2c-09a3e4541430/vertical-space.module.js"() {
       if (document.getElementById("9022860d04") === null) {
         const element = document.createElement("style");
         element.id = "9022860d04";
@@ -851,9 +851,9 @@
     }
   });
 
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/c4c54c49-f5ae-4dd8-940e-f97e456dc8cf/base.js
+  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/9e7ff13d-02a5-496d-8142-58cf918fb719/base.js
   var init_base = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/c4c54c49-f5ae-4dd8-940e-f97e456dc8cf/base.js"() {
+    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/9e7ff13d-02a5-496d-8142-58cf918fb719/base.js"() {
       if (document.getElementById("417038d6a2") === null) {
         const element = document.createElement("style");
         element.id = "417038d6a2";
@@ -1003,12 +1003,10 @@ svg {
     }, []);
     function handleChange(event) {
       const newValue = event.currentTarget.value;
-      console.log(newValue);
       setValue(newValue);
     }
     ;
     function handleCreatePopulateDataButtonClick() {
-      console.log("event emitted");
       emit("CREATE_POPULATE_DATA");
     }
     return /* @__PURE__ */ y(Container, { space: "large" }, /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Button, { fullWidth: true, onClick: handleCreatePopulateDataButtonClick }, "Populate"), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y(Button, { fullWidth: true, onClick: handleCloseButtonClick, secondary: true }, "Close"), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }));
