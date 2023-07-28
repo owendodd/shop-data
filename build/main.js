@@ -83,6 +83,35 @@ var init_events = __esm({
   }
 });
 
+// node_modules/@create-figma-plugin/utilities/lib/node/absolute-position/get-absolute-position.js
+function getAbsolutePosition(node) {
+  return {
+    x: node.absoluteTransform[0][2],
+    y: node.absoluteTransform[1][2]
+  };
+}
+var init_get_absolute_position = __esm({
+  "node_modules/@create-figma-plugin/utilities/lib/node/absolute-position/get-absolute-position.js"() {
+  }
+});
+
+// node_modules/@create-figma-plugin/utilities/lib/node/traverse-node.js
+function traverseNode(node, processNode, stopTraversal) {
+  if (node.removed === true) {
+    return;
+  }
+  if ("children" in node && (typeof stopTraversal !== "function" || stopTraversal(node) === false)) {
+    for (const childNode of node.children) {
+      traverseNode(childNode, processNode, stopTraversal);
+    }
+  }
+  processNode(node);
+}
+var init_traverse_node = __esm({
+  "node_modules/@create-figma-plugin/utilities/lib/node/traverse-node.js"() {
+  }
+});
+
 // node_modules/@create-figma-plugin/utilities/lib/node/load-fonts-async.js
 async function loadFontsAsync(nodes) {
   const result = {};
@@ -152,28 +181,81 @@ var init_ui = __esm({
 var init_lib = __esm({
   "node_modules/@create-figma-plugin/utilities/lib/index.js"() {
     init_events();
+    init_get_absolute_position();
     init_load_fonts_async();
+    init_traverse_node();
     init_ui();
   }
 });
 
 // src/utilities/set-text.ts
-async function setText(nodes, dataMap2) {
-  await loadFontsAsync(nodes);
-  for (const node of nodes) {
-    const layerName = node.name;
-    console.log(layerName);
-    const data = dataMap2[layerName];
-    if (data && layerName) {
-      const randomIndex = Math.floor(Math.random() * data.length);
-      node.characters = data[randomIndex];
+async function setText(node, dataMap2, index) {
+  const result = [];
+  traverseNode(node, async (child) => {
+    if (child.type === "TEXT") {
+      await loadFontsAsync([child]);
+      const text = dataMap2["product"][index][child.name];
+      child.characters = text;
+      result.push(child);
     }
-  }
+  });
+  return result;
 }
 var init_set_text = __esm({
   "src/utilities/set-text.ts"() {
     "use strict";
     init_lib();
+  }
+});
+
+// src/utilities/sort-nodes-by-position.ts
+function sortNodesByPosition(nodes, axis) {
+  const parent = nodes[0].parent;
+  if (parent === null) {
+    throw new Error("Node has no parent");
+  }
+  const orthogonalAxis = axis === "x" ? "y" : "x";
+  const result = nodes.slice().sort(function(a, b) {
+    const aAbsolutePosition = getAbsolutePosition(a);
+    const bAbsolutePosition = getAbsolutePosition(b);
+    if (aAbsolutePosition[axis] !== bAbsolutePosition[axis]) {
+      return aAbsolutePosition[axis] - bAbsolutePosition[axis];
+    }
+    if (aAbsolutePosition[orthogonalAxis] !== bAbsolutePosition[orthogonalAxis]) {
+      return aAbsolutePosition[orthogonalAxis] - bAbsolutePosition[orthogonalAxis];
+    }
+    return 0;
+  });
+  return result;
+}
+var init_sort_nodes_by_position = __esm({
+  "src/utilities/sort-nodes-by-position.ts"() {
+    "use strict";
+    init_lib();
+  }
+});
+
+// src/utilities/get-product-nodes.ts
+function getSelectedProductNodes() {
+  const result = [];
+  const nodes = figma.currentPage.selection.slice();
+  for (const node of nodes) {
+    traverseNode(node, function(node2) {
+      if (node2.name && node2.name === "product") {
+        result.push(node2);
+      }
+    });
+  }
+  if (result.length === 0) {
+    return [];
+  }
+  return sortNodesByPosition(result, "y");
+}
+var init_get_product_nodes = __esm({
+  "src/utilities/get-product-nodes.ts"() {
+    "use strict";
+    init_lib();
+    init_sort_nodes_by_position();
   }
 });
 
@@ -232,11 +314,11 @@ __export(main_exports, {
   default: () => main_default
 });
 function main_default() {
-  once("CREATE_POPULATE_DATA", async function() {
-    console.log("CREATE_POPULATE_DATA event received");
-    const nodes = findAllWithCriteria({ type: "TEXT" });
-    await setText(nodes, dataMap);
-    figma.closePlugin();
+  on("CREATE_POPULATE_DATA", async function() {
+    const nodes = getSelectedProductNodes();
+    nodes.forEach(async (node, index) => {
+      await setText(node, dataMap, index);
+    });
   });
   once("CLOSE", function() {
     figma.closePlugin();
@@ -251,6 +333,7 @@ var init_main = __esm({
     "use strict";
     init_lib();
     init_set_text();
+    init_get_product_nodes();
     init_data_map();
   }
 });

@@ -1,18 +1,15 @@
-import { loadFontsAsync } from "@create-figma-plugin/utilities";
-import { DataMap, Product } from "../types";
+import { DataMap } from "../types";
+import { loadFontsAsync, traverseNode } from "@create-figma-plugin/utilities";
 
-export async function setText(
-  nodes: Array<TextNode>,
-  dataMap: DataMap
-): Promise<void> {
-  await loadFontsAsync(nodes);
-  for (const node of nodes) {
-    const layerName = node.name;
-    console.log(layerName);
-    const data = dataMap[layerName];
-    if (data && layerName) {
-      const randomIndex = Math.floor(Math.random() * data.length);
-      node.characters = data[randomIndex];
+export async function setText(node: SceneNode, dataMap: DataMap, index: number) {
+  const result: Array<TextNode> = [];
+  traverseNode(node, async (child) => {
+    if (child.type === "TEXT") {
+      await loadFontsAsync([child]);
+      const text = dataMap['product'][index][child.name];
+      child.characters = text;
+      result.push(child as TextNode);
     }
-  }
+  });
+  return result;
 }

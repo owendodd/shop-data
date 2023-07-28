@@ -1,9 +1,9 @@
 import { getAbsolutePosition } from '@create-figma-plugin/utilities'
 
 export function sortNodesByPosition(
-  nodes: Array<TextNode>,
+  nodes: Array<SceneNode>,
   axis: keyof Vector
-): Array<TextNode> {
+): Array<SceneNode> {
   const parent = nodes[0].parent
   if (parent === null) {
     throw new Error('Node has no parent')
@@ -11,7 +11,7 @@ export function sortNodesByPosition(
   const orthogonalAxis = axis === 'x' ? 'y' : 'x'
   const result = nodes
     .slice()
-    .sort(function (a: TextNode, b: TextNode): number {
+    .sort(function (a: SceneNode, b: SceneNode): number {
       const aAbsolutePosition = getAbsolutePosition(a)
       const bAbsolutePosition = getAbsolutePosition(b)
       if (aAbsolutePosition[axis] !== bAbsolutePosition[axis]) {
