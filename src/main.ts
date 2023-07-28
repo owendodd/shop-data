@@ -10,7 +10,7 @@ export default function () {
     nodes.forEach(async (node, index) => {
       await setText(node, dataMap, index);
     });
-    // figma.closePlugin();
+    figma.closePlugin();
   });
 
   once<CloseHandler>("CLOSE", function () {

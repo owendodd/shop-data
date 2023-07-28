@@ -15,8 +15,9 @@ export interface DataMap {
 }
 
 export interface Product {
+  [key: string]: string;
   productName: string;
-  merchantName: string;
   productPrice: string;
+  merchantName: string;
   productImage: string;
 }
