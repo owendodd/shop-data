@@ -1,4 +1,4 @@
-import { once, on, showUI } from "@create-figma-plugin/utilities";
+import { once, on, showUI, loadFontsAsync } from "@create-figma-plugin/utilities";
 import { CloseHandler, CreatePopulateDataHandler } from "./types";
 import { setText } from "./utilities/set-text";
 import { getSelectedProductNodes } from "./utilities/get-product-nodes";
@@ -8,9 +8,8 @@ export default function () {
   on<CreatePopulateDataHandler>("CREATE_POPULATE_DATA", async function () {
     const nodes = getSelectedProductNodes();
     nodes.forEach(async (node, index) => {
-      await setText(node, dataMap, index);
+      await setText(node, dataMap);
     });
-    figma.closePlugin();
   });
 
   once<CloseHandler>("CLOSE", function () {
