@@ -319,6 +319,7 @@ function main_default() {
     nodes.forEach(async (node, index) => {
       await setText(node, dataMap, index);
     });
+    figma.closePlugin();
   });
   once("CLOSE", function() {
     figma.closePlugin();
