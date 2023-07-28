@@ -6,7 +6,8 @@ export async function setText(node: SceneNode, dataMap: DataMap, index: number) 
   traverseNode(node, async (child) => {
     if (child.type === "TEXT") {
       await loadFontsAsync([child]);
-      child.characters = "changed";
+      const text = dataMap['product'][index][child.name];
+      child.characters = text;
       result.push(child as TextNode);
     }
   });

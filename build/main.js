@@ -194,7 +194,8 @@ async function setText(node, dataMap2, index) {
   traverseNode(node, async (child) => {
     if (child.type === "TEXT") {
       await loadFontsAsync([child]);
-      child.characters = "changed";
+      const text = dataMap2["product"][index][child.name];
+      child.characters = text;
       result.push(child);
     }
   });
