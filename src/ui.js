@@ -10,7 +10,7 @@ function Plugin() {
     const options = [{
             value: 'Ceremonia'
         }, {
-            value: 'Outdoor'
+            value: 'Outdoor Voices'
         }, {
             value: 'Mansur Gavriel'
         }];

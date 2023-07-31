@@ -13,7 +13,7 @@ export default function () {
   on<CreatePopulateDataHandler>("CREATE_POPULATE_DATA", async function (value) {
     const nodes = getSelectedProductNodes();
     const query = `
-    query Search {
+    query {
       productSearchV2(query: "${value}") {
         nodes {
           id

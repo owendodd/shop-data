@@ -20,7 +20,7 @@ function Plugin() {
   const options: Array<DropdownOption> = [{
     value: 'Ceremonia'
   }, {
-    value: 'Outdoor'
+    value: 'Outdoor Voices'
   }, {
     value: 'Mansur Gavriel'
   }];

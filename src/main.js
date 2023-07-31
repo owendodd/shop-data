@@ -16,7 +16,7 @@ export default function () {
         return __awaiter(this, void 0, void 0, function* () {
             const nodes = getSelectedProductNodes();
             const query = `
-    query Search {
+    query {
       productSearchV2(query: "${value}") {
         nodes {
           id
