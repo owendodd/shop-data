@@ -17,13 +17,13 @@ function Plugin() {
   const handleCloseButtonClick = useCallback(function () {
     emit<CloseHandler>("CLOSE");
   }, []);
-  // const options: Array<DropdownOption> = [{
-  //   value: 'Ceremonia'
-  // }, {
-  //   value: 'Outdoor Voices'
-  // }, {
-  //   value: 'Mansur Gavriel'
-  // }];
+  const options: Array<DropdownOption> = [{
+    value: 'Ceremonia'
+  }, {
+    value: 'Outdoor'
+  }, {
+    value: 'Mansur Gavriel'
+  }];
 
   function handleChange(event: JSX.TargetedEvent<HTMLInputElement>) {
     const newValue = event.currentTarget.value;
@@ -31,13 +31,13 @@ function Plugin() {
   };
   
   function handleCreatePopulateDataButtonClick() {
-    emit("CREATE_POPULATE_DATA");
+    emit("CREATE_POPULATE_DATA", value);
   }
 
   return (
     <Container space="large">
       <VerticalSpace space="large" />
-      {/* <Dropdown onChange={handleChange} options={options} value={value} variant="border" /> */}
+      <Dropdown onChange={handleChange} options={options} value={value} variant="border" />
       <VerticalSpace space="large" />
       <Button fullWidth onClick={handleCreatePopulateDataButtonClick}>
         Populate
@@ -52,3 +52,4 @@ function Plugin() {
 }
 
 export default render(Plugin);
+   
