@@ -188,6 +188,39 @@ var init_lib = __esm({
   }
 });
 
+<<<<<<< HEAD
+=======
+// src/utilities/set-content.ts
+async function setContent(node, dataMap2) {
+  const textResult = [];
+  const imageResult = [];
+  const index = Math.floor(Math.random() * dataMap2["product"].length);
+  traverseNode(node, async (child) => {
+    if (child.type === "TEXT") {
+      await loadFontsAsync([child]);
+      const text = dataMap2["product"][index][child.name];
+      child.characters = text;
+      textResult.push(child);
+    } else if (child.type === "RECTANGLE") {
+      const imageUrl = dataMap2["product"][index][child.name];
+      const response = await fetch(imageUrl);
+      const data = await response.arrayBuffer();
+      const imageData = new Uint8Array(data);
+      const image = figma.createImage(imageData);
+      child.fills = [{ type: "IMAGE", imageHash: image.hash, scaleMode: "FILL" }];
+      console.log(child.name, imageUrl);
+    }
+  });
+  return textResult;
+}
+var init_set_content = __esm({
+  "src/utilities/set-content.ts"() {
+    "use strict";
+    init_lib();
+  }
+});
+
+>>>>>>> 6ae7693 (Pause)
 // src/utilities/sort-nodes-by-position.ts
 function sortNodesByPosition(nodes, axis) {
   const parent = nodes[0].parent;
@@ -319,7 +352,11 @@ __export(main_exports, {
 function main_default() {
   on("CREATE_POPULATE_DATA", async function(value) {
     const nodes = getSelectedProductNodes();
+<<<<<<< HEAD
     console.log("TEST");
+=======
+    console.log("hello");
+>>>>>>> 6ae7693 (Pause)
     nodes.forEach(async (node, index) => {
       await setContent(node, dataMap);
     });
@@ -328,7 +365,11 @@ function main_default() {
     figma.closePlugin();
   });
   showUI({
+<<<<<<< HEAD
     height: 170,
+=======
+    height: 265,
+>>>>>>> 6ae7693 (Pause)
     width: 240
   });
 }
@@ -336,6 +377,10 @@ var init_main = __esm({
   "src/main.ts"() {
     "use strict";
     init_lib();
+<<<<<<< HEAD
+=======
+    init_set_content();
+>>>>>>> 6ae7693 (Pause)
     init_get_product_nodes();
     init_data_map();
     init_set_content();

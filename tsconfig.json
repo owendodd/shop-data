@@ -1,13 +1,8 @@
 {
   "extends": "@create-figma-plugin/tsconfig",
   "compilerOptions": {
-    "target": "es6",
     "skipLibCheck": true,
-    "lib": [
-      "es6",
-      "dom",
-      "es2017"
-    ],
-    "typeRoots": ["node_modules/@figma", "node_modules/@types"],
+    "typeRoots": ["node_modules/@figma", "node_modules/@types"]
   },
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }
