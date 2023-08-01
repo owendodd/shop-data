@@ -318,8 +318,8 @@ function main_default() {
   on("CREATE_POPULATE_DATA", async function(value) {
     const nodes = getSelectedProductNodes();
     const query = `
-    query {
-      productSearchV2(query: "${value}") {
+    query Search {
+      productSearchV2(query: "${value}" first: 3) {
         nodes {
           id
           title
@@ -342,7 +342,7 @@ function main_default() {
       body: JSON.stringify({ query })
     });
     const data = await response.json();
-    console.log(data);
+    console.log(response);
     nodes.forEach(async (node, index) => {
       await setText(node, dataMap);
     });
