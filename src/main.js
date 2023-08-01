@@ -41,40 +41,47 @@ import { setContent } from "./utilities/set-content";
 export default function () {
     on("CREATE_POPULATE_DATA", function (value) {
         return __awaiter(this, void 0, void 0, function () {
-            var nodes, query, proxyUrl, apiUrl, response, data;
+            var nodes;
             var _this = this;
             return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        nodes = getSelectedProductNodes();
-                        query = "\n    query Search {\n      productSearchV2(query: \"".concat(value, "\" first: 3) {\n        nodes {\n          id\n          title\n          images {\n            width\n            height\n            url\n          }\n        }\n      }\n    }\n    ");
-                        proxyUrl = "https://corsproxy.io/?";
-                        apiUrl = "https://server.shop.app/graphql";
-                        return [4 /*yield*/, fetch(proxyUrl + apiUrl, {
-                                method: "POST",
-                                headers: {
-                                    "Content-Type": "application/json",
-                                },
-                                body: JSON.stringify({ query: query }),
-                            })];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.json()];
-                    case 2:
-                        data = _a.sent();
-                        console.log(data);
-                        nodes.forEach(function (node, index) { return __awaiter(_this, void 0, void 0, function () {
-                            return __generator(this, function (_a) {
-                                switch (_a.label) {
-                                    case 0: return [4 /*yield*/, setContent(node, dataMap)];
-                                    case 1:
-                                        _a.sent();
-                                        return [2 /*return*/];
-                                }
-                            });
-                        }); });
-                        return [2 /*return*/];
-                }
+                nodes = getSelectedProductNodes();
+                // const query = `
+                // query Search {
+                //   productSearchV2(query: "${value}" first: 3) {
+                //     nodes {
+                //       id
+                //       title
+                //       images {
+                //         width
+                //         height
+                //         url
+                //       }
+                //     }
+                //   }
+                // }
+                // `;
+                // const proxyUrl = "https://corsproxy.io/?";
+                // const apiUrl = "https://server.shop.app/graphql";
+                // const response = await fetch(proxyUrl + apiUrl, {
+                //   method: "POST",
+                //   headers: {
+                //     "Content-Type": "application/json",
+                //   },
+                //   body: JSON.stringify({ query }),
+                // });
+                // const data = await response.json();
+                // console.log(data);
+                nodes.forEach(function (node, index) { return __awaiter(_this, void 0, void 0, function () {
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0: return [4 /*yield*/, setContent(node, dataMap)];
+                            case 1:
+                                _a.sent();
+                                return [2 /*return*/];
+                        }
+                    });
+                }); });
+                return [2 /*return*/];
             });
         });
     });
