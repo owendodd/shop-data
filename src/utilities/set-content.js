@@ -35,14 +35,16 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import { loadFontsAsync, traverseNode } from "@create-figma-plugin/utilities";
-export function setContent(node, dataMap) {
+export function setContent(node, data, nodeCount) {
     return __awaiter(this, void 0, void 0, function () {
-        var index;
+        var index, product;
         var _this = this;
         return __generator(this, function (_a) {
-            index = Math.floor(Math.random() * dataMap['product'].length);
+            index = Math.floor(Math.random() * nodeCount);
+            product = data.productSearchV2.nodes[index];
+            console.log("Hello!");
             traverseNode(node, function (child) { return __awaiter(_this, void 0, void 0, function () {
-                var text, imageUrl, response, data, imageData, image;
+                var text, imageUrl, response, imageBuffer, imageData, image;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -50,21 +52,22 @@ export function setContent(node, dataMap) {
                             return [4 /*yield*/, loadFontsAsync([child])];
                         case 1:
                             _a.sent();
-                            text = dataMap['product'][index][child.name];
+                            text = product.title;
                             child.characters = text;
                             return [3 /*break*/, 5];
                         case 2:
                             if (!(child.type === "RECTANGLE")) return [3 /*break*/, 5];
-                            imageUrl = dataMap['product'][index][child.name];
+                            imageUrl = product.images[0].url;
+                            console.log(imageUrl);
                             return [4 /*yield*/, fetch(imageUrl)];
                         case 3:
                             response = _a.sent();
                             return [4 /*yield*/, response.arrayBuffer()];
                         case 4:
-                            data = _a.sent();
-                            imageData = new Uint8Array(data);
+                            imageBuffer = _a.sent();
+                            imageData = new Uint8Array(imageBuffer);
                             image = figma.createImage(imageData);
-                            child.fills = [{ type: 'IMAGE', imageHash: image.hash, scaleMode: 'FILL' }];
+                            child.fills = [{ type: "IMAGE", imageHash: image.hash, scaleMode: "FILL" }];
                             _a.label = 5;
                         case 5: return [2 /*return*/];
                     }

@@ -239,68 +239,22 @@ var init_get_product_nodes = __esm({
   }
 });
 
-// src/utilities/data-map.ts
-var dataMap;
-var init_data_map = __esm({
-  "src/utilities/data-map.ts"() {
-    "use strict";
-    dataMap = {
-      "product": [
-        {
-          productName: "iPhone 13 Pro Max",
-          merchantName: "Apple",
-          productPrice: "1099",
-          productImage: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-purple?wid=2560&hei=1440&fmt=jpeg&qlt=95&.v=1661027938735"
-        },
-        {
-          productName: "Samsung Galaxy S21 Ultra",
-          merchantName: "Samsung",
-          productPrice: "1199",
-          productImage: "https://boulanger.scene7.com/is/image/Boulanger/8806090886867_h_f_l_0?wid=500&hei=500"
-        },
-        {
-          productName: "Sony PlayStation 5",
-          merchantName: "Best Buy",
-          productPrice: "499",
-          productImage: "https://static.s-sfr.fr/media/4_ps5_digital_edition-03_830x554px.jpg"
-        },
-        {
-          productName: "Bose QuietComfort 35 II",
-          merchantName: "Amazon",
-          productPrice: "299",
-          productImage: "https://m.media-amazon.com/images/I/71l0KK5nMTL.jpg"
-        },
-        {
-          productName: "Nintendo Switch",
-          merchantName: "Walmart",
-          productPrice: "299",
-          productImage: "https://m.media-amazon.com/images/I/71QMz4m-yJL._AC_UF1000,1000_QL80_.jpg"
-        },
-        {
-          productName: "LG OLED TV",
-          merchantName: "Costco",
-          productPrice: "1499",
-          productImage: "https://www.lg.com/fr/images/televiseurs/md07573052/gallery/medium01.jpg"
-        }
-        // Add more products here
-      ]
-    };
-  }
-});
-
 // src/utilities/set-content.ts
-async function setContent(node, dataMap2) {
-  const index = Math.floor(Math.random() * dataMap2["product"].length);
+async function setContent(node, data, nodeCount) {
+  const index = Math.floor(Math.random() * nodeCount);
+  const product = data.productSearchV2.nodes[index];
+  console.log("Hello!");
   traverseNode(node, async (child) => {
     if (child.type === "TEXT") {
       await loadFontsAsync([child]);
-      const text = dataMap2["product"][index][child.name];
+      const text = product.title;
       child.characters = text;
     } else if (child.type === "RECTANGLE") {
-      const imageUrl = dataMap2["product"][index][child.name];
+      const imageUrl = product.images[0].url;
+      console.log(imageUrl);
       const response = await fetch(imageUrl);
-      const data = await response.arrayBuffer();
-      const imageData = new Uint8Array(data);
+      const imageBuffer = await response.arrayBuffer();
+      const imageData = new Uint8Array(imageBuffer);
       const image = figma.createImage(imageData);
       child.fills = [{ type: "IMAGE", imageHash: image.hash, scaleMode: "FILL" }];
     }
@@ -322,8 +276,40 @@ __export(main_exports, {
 function main_default() {
   on("CREATE_POPULATE_DATA", async function(value) {
     const nodes = getSelectedProductNodes();
+    const nodeCount = nodes.length;
+    const query = `
+    query Search {
+      productSearchV2(query: "${value}" first: ${nodeCount}) {
+        nodes {
+          id
+          title
+          price {
+            amount
+          }
+          shop {
+            name
+          }
+          images {
+            url
+          }
+        }
+      }
+    }
+    `;
+    const proxyUrl = "https://corsproxy.io/?";
+    const apiUrl = "https://server.shop.app/graphql";
+    const response = await fetch(proxyUrl + apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Device-Id": "graphiql-WEB"
+      },
+      body: JSON.stringify({ query })
+    });
+    const data = await response.json();
+    console.log(data);
     nodes.forEach(async (node, index) => {
-      await setContent(node, dataMap);
+      await setContent(node, data, nodeCount);
     });
   });
   once("CLOSE", function() {
@@ -339,7 +325,6 @@ var init_main = __esm({
     "use strict";
     init_lib();
     init_get_product_nodes();
-    init_data_map();
     init_set_content();
   }
 });

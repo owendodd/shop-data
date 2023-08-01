@@ -1,20 +1,24 @@
-import { DataMap } from "../types";
-import { loadFontsAsync, traverseNode, createImagePaint } from "@create-figma-plugin/utilities";
+import { loadFontsAsync, traverseNode} from "@create-figma-plugin/utilities";
+import { Products } from "../types";
 
-export async function setContent(node: SceneNode, dataMap: DataMap ) {
-  const index = Math.floor(Math.random() * dataMap['product'].length);
+
+export async function setContent( node: SceneNode, data: Products, nodeCount: number ) {
+  const index = Math.floor(Math.random() * nodeCount);
+  const product = data.productSearchV2.nodes[index];
+  console.log("Hello!");
   traverseNode(node, async (child) => {
     if (child.type === "TEXT") {
       await loadFontsAsync([child]);
-      const text = dataMap['product'][index][child.name];
+      const text = product.title;
       child.characters = text;
     } else if (child.type === "RECTANGLE") {
-      const imageUrl = dataMap['product'][index][child.name];
+      const imageUrl = product.images[0].url;
+      console.log(imageUrl);
       const response = await fetch(imageUrl);
-      const data = await response.arrayBuffer();
-      const imageData = new Uint8Array(data);
+      const imageBuffer = await response.arrayBuffer();
+      const imageData = new Uint8Array(imageBuffer);
       const image = figma.createImage(imageData);
-      child.fills = [{type: 'IMAGE', imageHash: image.hash, scaleMode: 'FILL'}];
+      child.fills = [{ type: "IMAGE", imageHash: image.hash, scaleMode: "FILL" }];
     }
   });
   return;
