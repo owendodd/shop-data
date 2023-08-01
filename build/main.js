@@ -188,27 +188,6 @@ var init_lib = __esm({
   }
 });
 
-// src/utilities/set-text.ts
-async function setText(node, dataMap2) {
-  const result = [];
-  const index = Math.floor(Math.random() * dataMap2["product"].length);
-  traverseNode(node, async (child) => {
-    if (child.type === "TEXT") {
-      await loadFontsAsync([child]);
-      const text = dataMap2["product"][index][child.name];
-      child.characters = text;
-      result.push(child);
-    }
-  });
-  return result;
-}
-var init_set_text = __esm({
-  "src/utilities/set-text.ts"() {
-    "use strict";
-    init_lib();
-  }
-});
-
 // src/utilities/sort-nodes-by-position.ts
 function sortNodesByPosition(nodes, axis) {
   const parent = nodes[0].parent;
@@ -309,6 +288,29 @@ var init_data_map = __esm({
   }
 });
 
+// src/utilities/set-content.ts
+async function setContent(node, dataMap2) {
+  const result = [];
+  const index = Math.floor(Math.random() * dataMap2["product"].length);
+  traverseNode(node, async (child) => {
+    if (child.type === "TEXT") {
+      await loadFontsAsync([child]);
+      const text = dataMap2["product"][index][child.name];
+      child.characters = text;
+      result.push(child);
+    } else if (child.type === "RECTANGLE") {
+      console.log(child.name);
+    }
+  });
+  return result;
+}
+var init_set_content = __esm({
+  "src/utilities/set-content.ts"() {
+    "use strict";
+    init_lib();
+  }
+});
+
 // src/main.ts
 var main_exports = {};
 __export(main_exports, {
@@ -317,41 +319,16 @@ __export(main_exports, {
 function main_default() {
   on("CREATE_POPULATE_DATA", async function(value) {
     const nodes = getSelectedProductNodes();
-    const query = `
-    query Search {
-      productSearchV2(query: "${value}" first: 3) {
-        nodes {
-          id
-          title
-          images {
-            width
-            height
-            url
-          }
-        }
-      }
-    }
-    `;
-    const proxyUrl = "https://corsproxy.io/?";
-    const apiUrl = "https://server.shop.app/graphql";
-    const response = await fetch(proxyUrl + apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ query })
-    });
-    const data = await response.json();
-    console.log(response);
+    console.log("TEST");
     nodes.forEach(async (node, index) => {
-      await setText(node, dataMap);
+      await setContent(node, dataMap);
     });
   });
   once("CLOSE", function() {
     figma.closePlugin();
   });
   showUI({
-    height: 165,
+    height: 170,
     width: 240
   });
 }
@@ -359,9 +336,9 @@ var init_main = __esm({
   "src/main.ts"() {
     "use strict";
     init_lib();
-    init_set_text();
     init_get_product_nodes();
     init_data_map();
+    init_set_content();
   }
 });
 

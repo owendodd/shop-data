@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@apollo/client": "^3.7.17",
     "@create-figma-plugin/ui": "^2.5.1",
     "@create-figma-plugin/utilities": "^2.5.1",
     "graphql-request": "^6.1.0",
