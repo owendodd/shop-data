@@ -1,31 +1,15 @@
 import { DataMap } from "../types";
-<<<<<<< HEAD
-import { loadFontsAsync, traverseNode } from "@create-figma-plugin/utilities";
-
-export async function setContent(node: SceneNode, dataMap: DataMap ) {
-  const result: Array<TextNode> = [];
-=======
 import { loadFontsAsync, traverseNode, createImagePaint } from "@create-figma-plugin/utilities";
 
 export async function setContent(node: SceneNode, dataMap: DataMap ) {
   const textResult: Array<TextNode> = [];
   const imageResult: Array<Uint8Array> = [];
->>>>>>> 6ae7693 (Pause)
   const index = Math.floor(Math.random() * dataMap['product'].length);
   traverseNode(node, async (child) => {
     if (child.type === "TEXT") {
       await loadFontsAsync([child]);
       const text = dataMap['product'][index][child.name];
       child.characters = text;
-<<<<<<< HEAD
-      result.push(child);
-    } else if (child.type === "RECTANGLE") {
-      console.log(child.name);
-      // Do something with the image fill
-    }
-  });
-  return result;
-=======
       textResult.push(child);
     } else if (child.type === "RECTANGLE") {
       const imageUrl = dataMap['product'][index][child.name];
@@ -38,5 +22,4 @@ export async function setContent(node: SceneNode, dataMap: DataMap ) {
     }
   });
   return textResult;
->>>>>>> 6ae7693 (Pause)
 }
