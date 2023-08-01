@@ -188,39 +188,6 @@ var init_lib = __esm({
   }
 });
 
-<<<<<<< HEAD
-=======
-// src/utilities/set-content.ts
-async function setContent(node, dataMap2) {
-  const textResult = [];
-  const imageResult = [];
-  const index = Math.floor(Math.random() * dataMap2["product"].length);
-  traverseNode(node, async (child) => {
-    if (child.type === "TEXT") {
-      await loadFontsAsync([child]);
-      const text = dataMap2["product"][index][child.name];
-      child.characters = text;
-      textResult.push(child);
-    } else if (child.type === "RECTANGLE") {
-      const imageUrl = dataMap2["product"][index][child.name];
-      const response = await fetch(imageUrl);
-      const data = await response.arrayBuffer();
-      const imageData = new Uint8Array(data);
-      const image = figma.createImage(imageData);
-      child.fills = [{ type: "IMAGE", imageHash: image.hash, scaleMode: "FILL" }];
-      console.log(child.name, imageUrl);
-    }
-  });
-  return textResult;
-}
-var init_set_content = __esm({
-  "src/utilities/set-content.ts"() {
-    "use strict";
-    init_lib();
-  }
-});
-
->>>>>>> 6ae7693 (Pause)
 // src/utilities/sort-nodes-by-position.ts
 function sortNodesByPosition(nodes, axis) {
   const parent = nodes[0].parent;
@@ -283,37 +250,37 @@ var init_data_map = __esm({
           productName: "iPhone 13 Pro Max",
           merchantName: "Apple",
           productPrice: "1099",
-          productImage: "https://cdn.pixabay.com/photo/2021/09/15/09/27/iphone-13-6627666_1280.jpg"
+          productImage: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-purple?wid=2560&hei=1440&fmt=jpeg&qlt=95&.v=1661027938735"
         },
         {
           productName: "Samsung Galaxy S21 Ultra",
           merchantName: "Samsung",
           productPrice: "1199",
-          productImage: "https://cdn.pixabay.com/photo/2021/02/01/20/09/samsung-galaxy-s21-ultra-5977682_1280.jpg"
+          productImage: "https://boulanger.scene7.com/is/image/Boulanger/8806090886867_h_f_l_0?wid=500&hei=500"
         },
         {
           productName: "Sony PlayStation 5",
           merchantName: "Best Buy",
           productPrice: "499",
-          productImage: "https://cdn.pixabay.com/photo/2021/01/22/16/31/playstation-5-5949772_1280.jpg"
+          productImage: "https://static.s-sfr.fr/media/4_ps5_digital_edition-03_830x554px.jpg"
         },
         {
           productName: "Bose QuietComfort 35 II",
           merchantName: "Amazon",
           productPrice: "299",
-          productImage: "https://cdn.pixabay.com/photo/2018/05/31/16/06/bose-3445097_1280.jpg"
+          productImage: "https://m.media-amazon.com/images/I/71l0KK5nMTL.jpg"
         },
         {
           productName: "Nintendo Switch",
           merchantName: "Walmart",
           productPrice: "299",
-          productImage: "https://cdn.pixabay.com/photo/2020/04/08/18/51/nintendo-switch-5027586_1280.jpg"
+          productImage: "https://m.media-amazon.com/images/I/71QMz4m-yJL._AC_UF1000,1000_QL80_.jpg"
         },
         {
           productName: "LG OLED TV",
           merchantName: "Costco",
           productPrice: "1499",
-          productImage: "https://cdn.pixabay.com/photo/2021/06/08/18/17/lg-oled-tv-6323071_1280.jpg"
+          productImage: "https://www.lg.com/fr/images/televiseurs/md07573052/gallery/medium01.jpg"
         }
         // Add more products here
       ]
@@ -323,19 +290,22 @@ var init_data_map = __esm({
 
 // src/utilities/set-content.ts
 async function setContent(node, dataMap2) {
-  const result = [];
   const index = Math.floor(Math.random() * dataMap2["product"].length);
   traverseNode(node, async (child) => {
     if (child.type === "TEXT") {
       await loadFontsAsync([child]);
       const text = dataMap2["product"][index][child.name];
       child.characters = text;
-      result.push(child);
     } else if (child.type === "RECTANGLE") {
-      console.log(child.name);
+      const imageUrl = dataMap2["product"][index][child.name];
+      const response = await fetch(imageUrl);
+      const data = await response.arrayBuffer();
+      const imageData = new Uint8Array(data);
+      const image = figma.createImage(imageData);
+      child.fills = [{ type: "IMAGE", imageHash: image.hash, scaleMode: "FILL" }];
     }
   });
-  return result;
+  return;
 }
 var init_set_content = __esm({
   "src/utilities/set-content.ts"() {
@@ -352,11 +322,32 @@ __export(main_exports, {
 function main_default() {
   on("CREATE_POPULATE_DATA", async function(value) {
     const nodes = getSelectedProductNodes();
-<<<<<<< HEAD
-    console.log("TEST");
-=======
-    console.log("hello");
->>>>>>> 6ae7693 (Pause)
+    const query = `
+    query Search {
+      productSearchV2(query: "${value}" first: 3) {
+        nodes {
+          id
+          title
+          images {
+            width
+            height
+            url
+          }
+        }
+      }
+    }
+    `;
+    const proxyUrl = "https://corsproxy.io/?";
+    const apiUrl = "https://server.shop.app/graphql";
+    const response = await fetch(proxyUrl + apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ query })
+    });
+    const data = await response.json();
+    console.log(data);
     nodes.forEach(async (node, index) => {
       await setContent(node, dataMap);
     });
@@ -365,11 +356,7 @@ function main_default() {
     figma.closePlugin();
   });
   showUI({
-<<<<<<< HEAD
-    height: 170,
-=======
-    height: 265,
->>>>>>> 6ae7693 (Pause)
+    height: 200,
     width: 240
   });
 }
@@ -377,10 +364,6 @@ var init_main = __esm({
   "src/main.ts"() {
     "use strict";
     init_lib();
-<<<<<<< HEAD
-=======
-    init_set_content();
->>>>>>> 6ae7693 (Pause)
     init_get_product_nodes();
     init_data_map();
     init_set_content();
