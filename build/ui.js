@@ -107,11 +107,11 @@
     x.__r = 0;
   }
   function P(n2, l3, u3, t3, i3, o3, r3, f3, e3, a3, v3) {
-    var p3, y2, _2, b3, g3, m3, w3, x2, P2, S, H2 = 0, I2 = t3 && t3.__k || s, T3 = I2.length, j3 = T3, z3 = l3.length;
-    for (u3.__k = [], p3 = 0; p3 < z3; p3++)
-      null != (b3 = u3.__k[p3] = null == (b3 = l3[p3]) || "boolean" == typeof b3 || "function" == typeof b3 ? null : "string" == typeof b3 || "number" == typeof b3 || "bigint" == typeof b3 ? d(null, b3, null, null, b3) : h(b3) ? d(k, { children: b3 }, null, null, null) : b3.__b > 0 ? d(b3.type, b3.props, b3.key, b3.ref ? b3.ref : null, b3.__v) : b3) && (b3.__ = u3, b3.__b = u3.__b + 1, -1 === (x2 = A(b3, I2, w3 = p3 + H2, j3)) ? _2 = c : (_2 = I2[x2] || c, I2[x2] = void 0, j3--), L(n2, b3, _2, i3, o3, r3, f3, e3, a3, v3), g3 = b3.__e, (y2 = b3.ref) && _2.ref != y2 && (_2.ref && O(_2.ref, null, b3), v3.push(y2, b3.__c || g3, b3)), null != g3 && (null == m3 && (m3 = g3), S = !(P2 = _2 === c || null === _2.__v) && x2 === w3, P2 ? -1 == x2 && H2-- : x2 !== w3 && (x2 === w3 + 1 ? (H2++, S = true) : x2 > w3 ? j3 > z3 - w3 ? (H2 += x2 - w3, S = true) : H2-- : H2 = x2 < w3 && x2 == w3 - 1 ? x2 - w3 : 0), w3 = p3 + H2, S = S || x2 == p3 && !P2, "function" != typeof b3.type || x2 === w3 && _2.__k !== b3.__k ? "function" == typeof b3.type || S ? void 0 !== b3.__d ? (e3 = b3.__d, b3.__d = void 0) : e3 = g3.nextSibling : e3 = $(n2, g3, e3) : e3 = C(b3, e3, n2), "function" == typeof u3.type && (u3.__d = e3)));
-    for (u3.__e = m3, p3 = T3; p3--; )
-      null != I2[p3] && ("function" == typeof u3.type && null != I2[p3].__e && I2[p3].__e == u3.__d && (u3.__d = I2[p3].__e.nextSibling), q(I2[p3], I2[p3]));
+    var p2, y2, _2, b3, g3, m3, w3, x2, P2, S, H2 = 0, I2 = t3 && t3.__k || s, T3 = I2.length, j3 = T3, z3 = l3.length;
+    for (u3.__k = [], p2 = 0; p2 < z3; p2++)
+      null != (b3 = u3.__k[p2] = null == (b3 = l3[p2]) || "boolean" == typeof b3 || "function" == typeof b3 ? null : "string" == typeof b3 || "number" == typeof b3 || "bigint" == typeof b3 ? d(null, b3, null, null, b3) : h(b3) ? d(k, { children: b3 }, null, null, null) : b3.__b > 0 ? d(b3.type, b3.props, b3.key, b3.ref ? b3.ref : null, b3.__v) : b3) && (b3.__ = u3, b3.__b = u3.__b + 1, -1 === (x2 = A(b3, I2, w3 = p2 + H2, j3)) ? _2 = c : (_2 = I2[x2] || c, I2[x2] = void 0, j3--), L(n2, b3, _2, i3, o3, r3, f3, e3, a3, v3), g3 = b3.__e, (y2 = b3.ref) && _2.ref != y2 && (_2.ref && O(_2.ref, null, b3), v3.push(y2, b3.__c || g3, b3)), null != g3 && (null == m3 && (m3 = g3), S = !(P2 = _2 === c || null === _2.__v) && x2 === w3, P2 ? -1 == x2 && H2-- : x2 !== w3 && (x2 === w3 + 1 ? (H2++, S = true) : x2 > w3 ? j3 > z3 - w3 ? (H2 += x2 - w3, S = true) : H2-- : H2 = x2 < w3 && x2 == w3 - 1 ? x2 - w3 : 0), w3 = p2 + H2, S = S || x2 == p2 && !P2, "function" != typeof b3.type || x2 === w3 && _2.__k !== b3.__k ? "function" == typeof b3.type || S ? void 0 !== b3.__d ? (e3 = b3.__d, b3.__d = void 0) : e3 = g3.nextSibling : e3 = $(n2, g3, e3) : e3 = C(b3, e3, n2), "function" == typeof u3.type && (u3.__d = e3)));
+    for (u3.__e = m3, p2 = T3; p2--; )
+      null != I2[p2] && ("function" == typeof u3.type && null != I2[p2].__e && I2[p2].__e == u3.__d && (u3.__d = I2[p2].__e.nextSibling), q(I2[p2], I2[p2]));
   }
   function C(n2, l3, u3) {
     for (var t3, i3 = n2.__k, o3 = 0; i3 && o3 < i3.length; o3++)
@@ -185,37 +185,37 @@
     return this.l[n2.type + true](l.event ? l.event(n2) : n2);
   }
   function L(n2, u3, t3, i3, o3, r3, f3, e3, c3, s3) {
-    var a3, p3, y2, d3, _2, g3, m3, w3, x2, C2, S, $2, A2, H2, I2, T3 = u3.type;
+    var a3, p2, y2, d3, _2, g3, m3, w3, x2, C2, S, $2, A2, H2, I2, T3 = u3.type;
     if (void 0 !== u3.constructor)
       return null;
     null != t3.__h && (c3 = t3.__h, e3 = u3.__e = t3.__e, u3.__h = null, r3 = [e3]), (a3 = l.__b) && a3(u3);
     try {
       n:
         if ("function" == typeof T3) {
-          if (w3 = u3.props, x2 = (a3 = T3.contextType) && i3[a3.__c], C2 = a3 ? x2 ? x2.props.value : a3.__ : i3, t3.__c ? m3 = (p3 = u3.__c = t3.__c).__ = p3.__E : ("prototype" in T3 && T3.prototype.render ? u3.__c = p3 = new T3(w3, C2) : (u3.__c = p3 = new b(w3, C2), p3.constructor = T3, p3.render = B), x2 && x2.sub(p3), p3.props = w3, p3.state || (p3.state = {}), p3.context = C2, p3.__n = i3, y2 = p3.__d = true, p3.__h = [], p3._sb = []), null == p3.__s && (p3.__s = p3.state), null != T3.getDerivedStateFromProps && (p3.__s == p3.state && (p3.__s = v({}, p3.__s)), v(p3.__s, T3.getDerivedStateFromProps(w3, p3.__s))), d3 = p3.props, _2 = p3.state, p3.__v = u3, y2)
-            null == T3.getDerivedStateFromProps && null != p3.componentWillMount && p3.componentWillMount(), null != p3.componentDidMount && p3.__h.push(p3.componentDidMount);
+          if (w3 = u3.props, x2 = (a3 = T3.contextType) && i3[a3.__c], C2 = a3 ? x2 ? x2.props.value : a3.__ : i3, t3.__c ? m3 = (p2 = u3.__c = t3.__c).__ = p2.__E : ("prototype" in T3 && T3.prototype.render ? u3.__c = p2 = new T3(w3, C2) : (u3.__c = p2 = new b(w3, C2), p2.constructor = T3, p2.render = B), x2 && x2.sub(p2), p2.props = w3, p2.state || (p2.state = {}), p2.context = C2, p2.__n = i3, y2 = p2.__d = true, p2.__h = [], p2._sb = []), null == p2.__s && (p2.__s = p2.state), null != T3.getDerivedStateFromProps && (p2.__s == p2.state && (p2.__s = v({}, p2.__s)), v(p2.__s, T3.getDerivedStateFromProps(w3, p2.__s))), d3 = p2.props, _2 = p2.state, p2.__v = u3, y2)
+            null == T3.getDerivedStateFromProps && null != p2.componentWillMount && p2.componentWillMount(), null != p2.componentDidMount && p2.__h.push(p2.componentDidMount);
           else {
-            if (null == T3.getDerivedStateFromProps && w3 !== d3 && null != p3.componentWillReceiveProps && p3.componentWillReceiveProps(w3, C2), !p3.__e && (null != p3.shouldComponentUpdate && false === p3.shouldComponentUpdate(w3, p3.__s, C2) || u3.__v === t3.__v)) {
-              for (u3.__v !== t3.__v && (p3.props = w3, p3.state = p3.__s, p3.__d = false), u3.__e = t3.__e, u3.__k = t3.__k, u3.__k.forEach(function(n3) {
+            if (null == T3.getDerivedStateFromProps && w3 !== d3 && null != p2.componentWillReceiveProps && p2.componentWillReceiveProps(w3, C2), !p2.__e && (null != p2.shouldComponentUpdate && false === p2.shouldComponentUpdate(w3, p2.__s, C2) || u3.__v === t3.__v)) {
+              for (u3.__v !== t3.__v && (p2.props = w3, p2.state = p2.__s, p2.__d = false), u3.__e = t3.__e, u3.__k = t3.__k, u3.__k.forEach(function(n3) {
                 n3 && (n3.__ = u3);
-              }), S = 0; S < p3._sb.length; S++)
-                p3.__h.push(p3._sb[S]);
-              p3._sb = [], p3.__h.length && f3.push(p3);
+              }), S = 0; S < p2._sb.length; S++)
+                p2.__h.push(p2._sb[S]);
+              p2._sb = [], p2.__h.length && f3.push(p2);
               break n;
             }
-            null != p3.componentWillUpdate && p3.componentWillUpdate(w3, p3.__s, C2), null != p3.componentDidUpdate && p3.__h.push(function() {
-              p3.componentDidUpdate(d3, _2, g3);
+            null != p2.componentWillUpdate && p2.componentWillUpdate(w3, p2.__s, C2), null != p2.componentDidUpdate && p2.__h.push(function() {
+              p2.componentDidUpdate(d3, _2, g3);
             });
           }
-          if (p3.context = C2, p3.props = w3, p3.__P = n2, p3.__e = false, $2 = l.__r, A2 = 0, "prototype" in T3 && T3.prototype.render) {
-            for (p3.state = p3.__s, p3.__d = false, $2 && $2(u3), a3 = p3.render(p3.props, p3.state, p3.context), H2 = 0; H2 < p3._sb.length; H2++)
-              p3.__h.push(p3._sb[H2]);
-            p3._sb = [];
+          if (p2.context = C2, p2.props = w3, p2.__P = n2, p2.__e = false, $2 = l.__r, A2 = 0, "prototype" in T3 && T3.prototype.render) {
+            for (p2.state = p2.__s, p2.__d = false, $2 && $2(u3), a3 = p2.render(p2.props, p2.state, p2.context), H2 = 0; H2 < p2._sb.length; H2++)
+              p2.__h.push(p2._sb[H2]);
+            p2._sb = [];
           } else
             do {
-              p3.__d = false, $2 && $2(u3), a3 = p3.render(p3.props, p3.state, p3.context), p3.state = p3.__s;
-            } while (p3.__d && ++A2 < 25);
-          p3.state = p3.__s, null != p3.getChildContext && (i3 = v(v({}, i3), p3.getChildContext())), y2 || null == p3.getSnapshotBeforeUpdate || (g3 = p3.getSnapshotBeforeUpdate(d3, _2)), P(n2, h(I2 = null != a3 && a3.type === k && null == a3.key ? a3.props.children : a3) ? I2 : [I2], u3, t3, i3, o3, r3, f3, e3, c3, s3), p3.base = u3.__e, u3.__h = null, p3.__h.length && f3.push(p3), m3 && (p3.__E = p3.__ = null);
+              p2.__d = false, $2 && $2(u3), a3 = p2.render(p2.props, p2.state, p2.context), p2.state = p2.__s;
+            } while (p2.__d && ++A2 < 25);
+          p2.state = p2.__s, null != p2.getChildContext && (i3 = v(v({}, i3), p2.getChildContext())), y2 || null == p2.getSnapshotBeforeUpdate || (g3 = p2.getSnapshotBeforeUpdate(d3, _2)), P(n2, h(I2 = null != a3 && a3.type === k && null == a3.key ? a3.props.children : a3) ? I2 : [I2], u3, t3, i3, o3, r3, f3, e3, c3, s3), p2.base = u3.__e, u3.__h = null, p2.__h.length && f3.push(p2), m3 && (p2.__E = p2.__ = null);
         } else
           null == r3 && u3.__v === t3.__v ? (u3.__k = t3.__k, u3.__e = t3.__e) : u3.__e = N(t3.__e, u3, t3, i3, o3, r3, f3, c3, s3);
       (a3 = l.diffed) && a3(u3);
@@ -384,10 +384,6 @@
     }
     return o3.__N || o3.__;
   }
-  function p2(u3, i3) {
-    var o3 = d2(t2++, 3);
-    !l.__s && z2(o3.__H, i3) && (o3.__ = u3, o3.i = i3, r2.__H.__h.push(o3));
-  }
   function _(n2) {
     return o2 = 5, F(function() {
       return { current: n2 };
@@ -486,10 +482,10 @@
     }
   });
 
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/6e25ae24-dd3d-4325-9a9f-3960fd6aa209/loading-indicator.module.js
+  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/53ebaf98-86ce-4971-b7ef-5c5eba2f6f87/loading-indicator.module.js
   var loading_indicator_module_default;
   var init_loading_indicator_module = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/6e25ae24-dd3d-4325-9a9f-3960fd6aa209/loading-indicator.module.js"() {
+    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/53ebaf98-86ce-4971-b7ef-5c5eba2f6f87/loading-indicator.module.js"() {
       if (document.getElementById("6a947c4272") === null) {
         const element = document.createElement("style");
         element.id = "6a947c4272";
@@ -548,10 +544,10 @@
     }
   });
 
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/32464d52-3ef3-48b1-86dd-fb9c0e7b2d9b/button.module.js
+  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/78d12628-8b9d-4afa-a262-77c0c7d7a02b/button.module.js
   var button_module_default;
   var init_button_module = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/32464d52-3ef3-48b1-86dd-fb9c0e7b2d9b/button.module.js"() {
+    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/78d12628-8b9d-4afa-a262-77c0c7d7a02b/button.module.js"() {
       if (document.getElementById("266a3d7ddd") === null) {
         const element = document.createElement("style");
         element.id = "266a3d7ddd";
@@ -734,134 +730,6 @@
     }
   });
 
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/5636afa8-4474-4fa6-bc16-4d2d86a7d0de/icon.module.js
-  var icon_module_default;
-  var init_icon_module = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/5636afa8-4474-4fa6-bc16-4d2d86a7d0de/icon.module.js"() {
-      if (document.getElementById("e182fc1f0e") === null) {
-        const element = document.createElement("style");
-        element.id = "e182fc1f0e";
-        element.textContent = `._icon_13804_1 {
-  fill: currentColor;
-}
-
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvaWNvbnMvaWNvbi5tb2R1bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0FBQ3BCIiwiZmlsZSI6Im5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvaWNvbnMvaWNvbi5tb2R1bGUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmljb24ge1xuICBmaWxsOiBjdXJyZW50Q29sb3I7XG59XG4iXX0= */`;
-        document.head.append(element);
-      }
-      icon_module_default = { "icon": "_icon_13804_1" };
-    }
-  });
-
-  // node_modules/@create-figma-plugin/ui/lib/icons/create-icon.js
-  function createIcon(path, options) {
-    const { width, height } = options;
-    return function Icon(_a) {
-      var _b = _a, { color } = _b, rest = __objRest(_b, ["color"]);
-      return y(
-        "svg",
-        __spreadProps(__spreadValues({}, rest), { class: icon_module_default.icon, height, style: typeof color === "undefined" ? void 0 : {
-          fill: `var(--figma-color-icon-${color})`
-        }, width, xmlns: "http://www.w3.org/2000/svg" }),
-        y("path", { "clip-rule": "evenodd", d: path, "fill-rule": "evenodd" })
-      );
-    };
-  }
-  var init_create_icon = __esm({
-    "node_modules/@create-figma-plugin/ui/lib/icons/create-icon.js"() {
-      init_preact_module();
-      init_icon_module();
-    }
-  });
-
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/97a5d429-0af7-4e1a-93b2-4ca8f6b0b91f/menu.module.js
-  var menu_module_default;
-  var init_menu_module = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/97a5d429-0af7-4e1a-93b2-4ca8f6b0b91f/menu.module.js"() {
-      if (document.getElementById("c5041ddbdf") === null) {
-        const element = document.createElement("style");
-        element.id = "c5041ddbdf";
-        element.textContent = `._menu_1m36p_1 {
-  position: absolute;
-  left: 0;
-  min-width: 100%;
-  padding: var(--space-extra-small) 0;
-  border-radius: var(--border-radius-2);
-  background-color: #1e1e1e; /* FIXME */
-  box-shadow: var(--box-shadow-menu);
-  color: rgba(255, 255, 255, 1); /* FIXME */
-  font-size: var(--font-size-12);
-  overflow-y: auto;
-}
-._menu_1m36p_1::-webkit-scrollbar {
-  display: none;
-}
-
-._hidden_1m36p_17 {
-  pointer-events: none;
-  visibility: hidden;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio: 1.5),
-  screen and (min-resolution: 1.5dppx) {
-  ._menu_1m36p_1 {
-    -webkit-font-smoothing: antialiased;
-  }
-}
-
-._optionHeader_1m36p_29,
-._optionValue_1m36p_30 {
-  overflow: hidden;
-  padding: 4px var(--space-medium) 4px 32px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-._optionHeader_1m36p_29 {
-  color: rgba(255, 255, 255, 0.7); /* FIXME */
-  font-size: var(--font-size-12);
-}
-
-._optionValue_1m36p_30 {
-  position: relative;
-}
-._optionValueSelected_1m36p_45 {
-  background-color: var(--figma-color-bg-brand);
-}
-._optionValueDisabled_1m36p_48 {
-  color: rgba(255, 255, 255, 0.4); /* FIXME */
-}
-
-._optionSeparator_1m36p_52 {
-  width: 100%;
-  height: 1px;
-  margin: var(--space-extra-small) 0;
-  background-color: #444444; /* FIXME */
-}
-
-._input_1m36p_59 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-._checkIcon_1m36p_70 {
-  position: absolute;
-  top: 5px;
-  left: var(--space-extra-small);
-}
-
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY3NzL21lbnUubW9kdWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQixPQUFPO0VBQ1AsZUFBZTtFQUNmLG1DQUFtQztFQUNuQyxxQ0FBcUM7RUFDckMseUJBQXlCLEVBQUUsVUFBVTtFQUNyQyxrQ0FBa0M7RUFDbEMsNkJBQTZCLEVBQUUsVUFBVTtFQUN6Qyw4QkFBOEI7RUFDOUIsZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7RUFDRSxvQkFBb0I7RUFDcEIsa0JBQWtCO0FBQ3BCOztBQUVBOztFQUVFO0lBQ0UsbUNBQW1DO0VBQ3JDO0FBQ0Y7O0FBRUE7O0VBRUUsZ0JBQWdCO0VBQ2hCLHlDQUF5QztFQUN6Qyx1QkFBdUI7RUFDdkIsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsK0JBQStCLEVBQUUsVUFBVTtFQUMzQyw4QkFBOEI7QUFDaEM7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7QUFDQTtFQUNFLDZDQUE2QztBQUMvQztBQUNBO0VBQ0UsK0JBQStCLEVBQUUsVUFBVTtBQUM3Qzs7QUFFQTtFQUNFLFdBQVc7RUFDWCxXQUFXO0VBQ1gsa0NBQWtDO0VBQ2xDLHlCQUF5QixFQUFFLFVBQVU7QUFDdkM7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsTUFBTTtFQUNOLFFBQVE7RUFDUixTQUFTO0VBQ1QsT0FBTztFQUNQLGNBQWM7RUFDZCxXQUFXO0VBQ1gsWUFBWTtBQUNkOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLFFBQVE7RUFDUiw4QkFBOEI7QUFDaEMiLCJmaWxlIjoibm9kZV9tb2R1bGVzL0BjcmVhdGUtZmlnbWEtcGx1Z2luL3VpL2xpYi9jc3MvbWVudS5tb2R1bGUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1lbnUge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDA7XG4gIG1pbi13aWR0aDogMTAwJTtcbiAgcGFkZGluZzogdmFyKC0tc3BhY2UtZXh0cmEtc21hbGwpIDA7XG4gIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMtMik7XG4gIGJhY2tncm91bmQtY29sb3I6ICMxZTFlMWU7IC8qIEZJWE1FICovXG4gIGJveC1zaGFkb3c6IHZhcigtLWJveC1zaGFkb3ctbWVudSk7XG4gIGNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDEpOyAvKiBGSVhNRSAqL1xuICBmb250LXNpemU6IHZhcigtLWZvbnQtc2l6ZS0xMik7XG4gIG92ZXJmbG93LXk6IGF1dG87XG59XG4ubWVudTo6LXdlYmtpdC1zY3JvbGxiYXIge1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4uaGlkZGVuIHtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG4gIHZpc2liaWxpdHk6IGhpZGRlbjtcbn1cblxuQG1lZGlhIHNjcmVlbiBhbmQgKC13ZWJraXQtbWluLWRldmljZS1waXhlbC1yYXRpbzogMS41KSxcbiAgc2NyZWVuIGFuZCAobWluLXJlc29sdXRpb246IDEuNWRwcHgpIHtcbiAgLm1lbnUge1xuICAgIC13ZWJraXQtZm9udC1zbW9vdGhpbmc6IGFudGlhbGlhc2VkO1xuICB9XG59XG5cbi5vcHRpb25IZWFkZXIsXG4ub3B0aW9uVmFsdWUge1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBwYWRkaW5nOiA0cHggdmFyKC0tc3BhY2UtbWVkaXVtKSA0cHggMzJweDtcbiAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XG59XG5cbi5vcHRpb25IZWFkZXIge1xuICBjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjcpOyAvKiBGSVhNRSAqL1xuICBmb250LXNpemU6IHZhcigtLWZvbnQtc2l6ZS0xMik7XG59XG5cbi5vcHRpb25WYWx1ZSB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cbi5vcHRpb25WYWx1ZVNlbGVjdGVkIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYmctYnJhbmQpO1xufVxuLm9wdGlvblZhbHVlRGlzYWJsZWQge1xuICBjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjQpOyAvKiBGSVhNRSAqL1xufVxuXG4ub3B0aW9uU2VwYXJhdG9yIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMXB4O1xuICBtYXJnaW46IHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKSAwO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDQ0NDQ0OyAvKiBGSVhNRSAqL1xufVxuXG4uaW5wdXQge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbi5jaGVja0ljb24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogNXB4O1xuICBsZWZ0OiB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG59XG4iXX0= */`;
-        document.head.append(element);
-      }
-      menu_module_default = { "menu": "_menu_1m36p_1", "hidden": "_hidden_1m36p_17", "optionHeader": "_optionHeader_1m36p_29", "optionValue": "_optionValue_1m36p_30", "optionValueSelected": "_optionValueSelected_1m36p_45", "optionValueDisabled": "_optionValueDisabled_1m36p_48", "optionSeparator": "_optionSeparator_1m36p_52", "input": "_input_1m36p_59", "checkIcon": "_checkIcon_1m36p_70" };
-    }
-  });
-
   // node_modules/@create-figma-plugin/ui/lib/utilities/get-current-from-ref.js
   function getCurrentFromRef(ref) {
     if (ref.current === null) {
@@ -874,550 +742,62 @@
     }
   });
 
-  // node_modules/@create-figma-plugin/ui/lib/hooks/use-mouse-down-outside.js
-  function useMouseDownOutside(options) {
-    const { ref, onMouseDownOutside } = options;
-    p2(function() {
-      function handleBlur() {
-        onMouseDownOutside();
-      }
-      function handleMouseDown(event) {
-        const element = getCurrentFromRef(ref);
-        if (element === event.target || element.contains(event.target)) {
-          return;
-        }
-        onMouseDownOutside();
-      }
-      window.addEventListener("blur", handleBlur);
-      window.addEventListener("mousedown", handleMouseDown);
-      return function() {
-        window.removeEventListener("blur", handleBlur);
-        window.removeEventListener("mousedown", handleMouseDown);
-      };
-    }, [ref, onMouseDownOutside]);
-  }
-  var init_use_mouse_down_outside = __esm({
-    "node_modules/@create-figma-plugin/ui/lib/hooks/use-mouse-down-outside.js"() {
-      init_hooks_module();
-      init_get_current_from_ref();
-    }
-  });
-
-  // node_modules/@create-figma-plugin/ui/lib/hooks/use-scrollable-menu.js
-  function useScrollableMenu(options) {
-    const { itemIdDataAttributeName, menuElementRef, selectedId, setSelectedId } = options;
-    const getItemElements = T2(function() {
-      return Array.from(getCurrentFromRef(menuElementRef).querySelectorAll(`[${itemIdDataAttributeName}]`)).filter(function(element) {
-        return element.hasAttribute("disabled") === false;
-      });
-    }, [itemIdDataAttributeName, menuElementRef]);
-    const findIndexByItemId = T2(function(id) {
-      if (id === null) {
-        return -1;
-      }
-      const index = getItemElements().findIndex(function(element) {
-        return element.getAttribute(itemIdDataAttributeName) === id;
-      });
-      if (index === -1) {
-        throw new Error("Invariant violation");
-      }
-      return index;
-    }, [getItemElements, itemIdDataAttributeName]);
-    const updateScrollPosition = T2(function(id) {
-      const itemElements = getItemElements();
-      const index = findIndexByItemId(id);
-      const selectedElement = itemElements[index];
-      const menuElement = getCurrentFromRef(menuElementRef);
-      const scrollTop = menuElement.scrollTop;
-      const offsetTop = computeRelativeOffsetTop(selectedElement, menuElement);
-      if (offsetTop < scrollTop) {
-        menuElement.scrollTop = offsetTop;
-        return;
-      }
-      const offsetBottom = offsetTop + selectedElement.offsetHeight;
-      if (offsetBottom > menuElement.scrollTop + menuElement.offsetHeight) {
-        menuElement.scrollTop = offsetBottom - menuElement.offsetHeight;
-      }
-    }, [findIndexByItemId, getItemElements, menuElementRef]);
-    const handleScrollableMenuKeyDown = T2(function(event) {
-      const key = event.key;
-      if (key === "ArrowDown" || key === "ArrowUp") {
-        const itemElements = getItemElements();
-        const index = findIndexByItemId(selectedId);
-        let newIndex;
-        if (key === "ArrowDown") {
-          newIndex = index === -1 || index === itemElements.length - 1 ? 0 : index + 1;
-        } else {
-          newIndex = index === -1 || index === 0 ? itemElements.length - 1 : index - 1;
-        }
-        const selectedElement = itemElements[newIndex];
-        const newSelectedId = selectedElement.getAttribute(itemIdDataAttributeName);
-        setSelectedId(newSelectedId);
-        updateScrollPosition(newSelectedId);
-      }
-    }, [
-      getItemElements,
-      findIndexByItemId,
-      itemIdDataAttributeName,
-      setSelectedId,
-      selectedId,
-      updateScrollPosition
-    ]);
-    const handleScrollableMenuItemMouseMove = T2(function(event) {
-      const id = event.currentTarget.getAttribute(itemIdDataAttributeName);
-      if (id !== selectedId) {
-        setSelectedId(id);
-      }
-    }, [itemIdDataAttributeName, selectedId, setSelectedId]);
-    return {
-      handleScrollableMenuItemMouseMove,
-      handleScrollableMenuKeyDown
-    };
-  }
-  function computeRelativeOffsetTop(targetElement, parentElement) {
-    let element = targetElement;
-    let offsetTop = 0;
-    while (element !== parentElement) {
-      offsetTop += element.offsetTop;
-      if (element.parentElement === null) {
-        throw new Error("`element.parentElement` is `null`");
-      }
-      element = element.parentElement;
-    }
-    return offsetTop;
-  }
-  var init_use_scrollable_menu = __esm({
-    "node_modules/@create-figma-plugin/ui/lib/hooks/use-scrollable-menu.js"() {
-      init_hooks_module();
-      init_get_current_from_ref();
-    }
-  });
-
-  // node_modules/@create-figma-plugin/ui/lib/icons/icon-8/icon-control-chevron-down-8.js
-  var IconControlChevronDown8;
-  var init_icon_control_chevron_down_8 = __esm({
-    "node_modules/@create-figma-plugin/ui/lib/icons/icon-8/icon-control-chevron-down-8.js"() {
-      init_create_icon();
-      IconControlChevronDown8 = createIcon("m3.64641 6.35352-3-3 .70711-.70711 2.64644 2.64645 2.64645-2.64645.70711.70711-3 3-.35356.35355-.35355-.35355Z", { height: 8, width: 8 });
-    }
-  });
-
-  // node_modules/@create-figma-plugin/ui/lib/icons/icon-16/icon-menu-checkmark-checked-16.js
-  var IconMenuCheckmarkChecked16;
-  var init_icon_menu_checkmark_checked_16 = __esm({
-    "node_modules/@create-figma-plugin/ui/lib/icons/icon-16/icon-menu-checkmark-checked-16.js"() {
-      init_create_icon();
-      IconMenuCheckmarkChecked16 = createIcon("M13.2069 5.20724 7.70688 10.7072l-.70711.7072-.70711-.7072-3-2.99996 1.41422-1.41421 2.29289 2.29289 4.79293-4.79289 1.4142 1.41421Z", { height: 16, width: 16 });
-    }
-  });
-
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/385df9c3-02d4-478a-ad45-0528ec5d7399/dropdown.module.js
-  var dropdown_module_default;
-  var init_dropdown_module = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/385df9c3-02d4-478a-ad45-0528ec5d7399/dropdown.module.js"() {
-      if (document.getElementById("cb06f334cb") === null) {
+  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/723bb067-9f36-4d88-923f-8467b2ad92d0/text.module.js
+  var text_module_default;
+  var init_text_module = __esm({
+    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/723bb067-9f36-4d88-923f-8467b2ad92d0/text.module.js"() {
+      if (document.getElementById("9c1b86cf32") === null) {
         const element = document.createElement("style");
-        element.id = "cb06f334cb";
-        element.textContent = `._dropdown_idjri_1 {
-  position: relative;
-  z-index: var(--z-index-1);
-  display: flex;
-  width: 100%;
-  min-width: 0; /* See https://css-tricks.com/flexbox-truncated-text/ */
-  height: 28px;
-  align-items: center;
-  padding-left: var(--space-extra-small);
+        element.id = "9c1b86cf32";
+        element.textContent = `._text_mh6mm_1 {
+  padding-top: 1px;
   color: var(--figma-color-text);
+  pointer-events: none;
+  transform: translateY(4px);
 }
-._dropdown_idjri_1:not(._disabled_idjri_12):focus-within {
-  z-index: var(--z-index-2); /* stack \`.dropdown\` over its sibling elements */
-  outline: 0;
+._text_mh6mm_1:before {
+  display: block;
+  height: 0;
+  margin-top: -9px;
+  content: '';
+  pointer-events: none;
 }
 
-._disabled_idjri_12 {
-  cursor: not-allowed;
+._numeric_mh6mm_15 {
+  font-variant-numeric: tabular-nums;
 }
 
-._icon_idjri_21 {
-  position: absolute;
-  top: 14px;
-  left: 16px;
-  color: var(--figma-color-icon-secondary);
+._left_mh6mm_19 {
+  text-align: left;
+}
+._center_mh6mm_22 {
   text-align: center;
-  transform: translate(-50%, -50%);
 }
-._disabled_idjri_12 ._icon_idjri_21 {
-  color: var(--figma-color-icon-disabled);
-}
-
-._empty_idjri_33 {
-  flex-grow: 1;
+._right_mh6mm_25 {
+  text-align: right;
 }
 
-._value_idjri_37 {
-  overflow: hidden;
-  margin-right: 6px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-._dropdown_idjri_1:not(._disabled_idjri_12):hover ._value_idjri_37,
-._dropdown_idjri_1:not(._disabled_idjri_12):focus ._value_idjri_37,
-._dropdown_idjri_1:not(._disabled_idjri_12):focus-within ._value_idjri_37 {
-  flex-grow: 1;
-}
-._disabled_idjri_12 ._value_idjri_37 {
-  color: var(--figma-color-text-disabled);
-}
-._hasIcon_idjri_51 ._value_idjri_37 {
-  padding-left: var(--space-extra-large);
-}
-
-._placeholder_idjri_55 {
-  color: var(--figma-color-text-tertiary);
-}
-
-._chevronIcon_idjri_59 {
-  margin-right: var(--space-extra-small);
-  color: var(--figma-color-icon-secondary);
-}
-._dropdown_idjri_1:not(._disabled_idjri_12):hover ._chevronIcon_idjri_59 {
-  color: var(--figma-color-icon);
-}
-._disabled_idjri_12 ._chevronIcon_idjri_59 {
-  color: var(--figma-color-icon-disabled);
-}
-
-._border_idjri_70 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border: 1px solid transparent;
-  border-radius: var(--border-radius-2);
-}
-._hasBorder_idjri_79 ._border_idjri_70,
-._dropdown_idjri_1:not(._disabled_idjri_12):hover ._border_idjri_70 {
-  border-color: var(--figma-color-border);
-}
-
-._underline_idjri_84 {
-  position: absolute;
-  right: var(--space-extra-small);
-  bottom: 0;
-  left: var(--space-extra-small);
-  height: 1px;
-  background-color: var(--figma-color-border);
-}
-._dropdown_idjri_1:not(._disabled_idjri_12):hover ._underline_idjri_84,
-._dropdown_idjri_1:not(._disabled_idjri_12):focus ._underline_idjri_84 {
-  background-color: transparent;
-}
-
-._menu_idjri_97 {
-  max-width: 0;
-  max-height: 0;
-}
-
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy9kcm9wZG93bi9kcm9wZG93bi5tb2R1bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0VBQ2xCLHlCQUF5QjtFQUN6QixhQUFhO0VBQ2IsV0FBVztFQUNYLFlBQVksRUFBRSx1REFBdUQ7RUFDckUsWUFBWTtFQUNaLG1CQUFtQjtFQUNuQixzQ0FBc0M7RUFDdEMsOEJBQThCO0FBQ2hDO0FBQ0E7RUFDRSx5QkFBeUIsRUFBRSxnREFBZ0Q7RUFDM0UsVUFBVTtBQUNaOztBQUVBO0VBQ0UsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLFNBQVM7RUFDVCxVQUFVO0VBQ1Ysd0NBQXdDO0VBQ3hDLGtCQUFrQjtFQUNsQixnQ0FBZ0M7QUFDbEM7QUFDQTtFQUNFLHVDQUF1QztBQUN6Qzs7QUFFQTtFQUNFLFlBQVk7QUFDZDs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtBQUNyQjtBQUNBOzs7RUFHRSxZQUFZO0FBQ2Q7QUFDQTtFQUNFLHVDQUF1QztBQUN6QztBQUNBO0VBQ0Usc0NBQXNDO0FBQ3hDOztBQUVBO0VBQ0UsdUNBQXVDO0FBQ3pDOztBQUVBO0VBQ0Usc0NBQXNDO0VBQ3RDLHdDQUF3QztBQUMxQztBQUNBO0VBQ0UsOEJBQThCO0FBQ2hDO0FBQ0E7RUFDRSx1Q0FBdUM7QUFDekM7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsTUFBTTtFQUNOLFFBQVE7RUFDUixTQUFTO0VBQ1QsT0FBTztFQUNQLDZCQUE2QjtFQUM3QixxQ0FBcUM7QUFDdkM7QUFDQTs7RUFFRSx1Q0FBdUM7QUFDekM7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsK0JBQStCO0VBQy9CLFNBQVM7RUFDVCw4QkFBOEI7RUFDOUIsV0FBVztFQUNYLDJDQUEyQztBQUM3QztBQUNBOztFQUVFLDZCQUE2QjtBQUMvQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixhQUFhO0FBQ2YiLCJmaWxlIjoibm9kZV9tb2R1bGVzL0BjcmVhdGUtZmlnbWEtcGx1Z2luL3VpL2xpYi9jb21wb25lbnRzL2Ryb3Bkb3duL2Ryb3Bkb3duLm1vZHVsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZHJvcGRvd24ge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHotaW5kZXg6IHZhcigtLXotaW5kZXgtMSk7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIHdpZHRoOiAxMDAlO1xuICBtaW4td2lkdGg6IDA7IC8qIFNlZSBodHRwczovL2Nzcy10cmlja3MuY29tL2ZsZXhib3gtdHJ1bmNhdGVkLXRleHQvICovXG4gIGhlaWdodDogMjhweDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgcGFkZGluZy1sZWZ0OiB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0KTtcbn1cbi5kcm9wZG93bjpub3QoLmRpc2FibGVkKTpmb2N1cy13aXRoaW4ge1xuICB6LWluZGV4OiB2YXIoLS16LWluZGV4LTIpOyAvKiBzdGFjayBgLmRyb3Bkb3duYCBvdmVyIGl0cyBzaWJsaW5nIGVsZW1lbnRzICovXG4gIG91dGxpbmU6IDA7XG59XG5cbi5kaXNhYmxlZCB7XG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XG59XG5cbi5pY29uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDE0cHg7XG4gIGxlZnQ6IDE2cHg7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1pY29uLXNlY29uZGFyeSk7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG59XG4uZGlzYWJsZWQgLmljb24ge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItaWNvbi1kaXNhYmxlZCk7XG59XG5cbi5lbXB0eSB7XG4gIGZsZXgtZ3JvdzogMTtcbn1cblxuLnZhbHVlIHtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgbWFyZ2luLXJpZ2h0OiA2cHg7XG4gIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xufVxuLmRyb3Bkb3duOm5vdCguZGlzYWJsZWQpOmhvdmVyIC52YWx1ZSxcbi5kcm9wZG93bjpub3QoLmRpc2FibGVkKTpmb2N1cyAudmFsdWUsXG4uZHJvcGRvd246bm90KC5kaXNhYmxlZCk6Zm9jdXMtd2l0aGluIC52YWx1ZSB7XG4gIGZsZXgtZ3JvdzogMTtcbn1cbi5kaXNhYmxlZCAudmFsdWUge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC1kaXNhYmxlZCk7XG59XG4uaGFzSWNvbiAudmFsdWUge1xuICBwYWRkaW5nLWxlZnQ6IHZhcigtLXNwYWNlLWV4dHJhLWxhcmdlKTtcbn1cblxuLnBsYWNlaG9sZGVyIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLXRleHQtdGVydGlhcnkpO1xufVxuXG4uY2hldnJvbkljb24ge1xuICBtYXJnaW4tcmlnaHQ6IHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKTtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tc2Vjb25kYXJ5KTtcbn1cbi5kcm9wZG93bjpub3QoLmRpc2FibGVkKTpob3ZlciAuY2hldnJvbkljb24ge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItaWNvbik7XG59XG4uZGlzYWJsZWQgLmNoZXZyb25JY29uIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tZGlzYWJsZWQpO1xufVxuXG4uYm9yZGVyIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDA7XG4gIHJpZ2h0OiAwO1xuICBib3R0b206IDA7XG4gIGxlZnQ6IDA7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICBib3JkZXItcmFkaXVzOiB2YXIoLS1ib3JkZXItcmFkaXVzLTIpO1xufVxuLmhhc0JvcmRlciAuYm9yZGVyLFxuLmRyb3Bkb3duOm5vdCguZGlzYWJsZWQpOmhvdmVyIC5ib3JkZXIge1xuICBib3JkZXItY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJvcmRlcik7XG59XG5cbi51bmRlcmxpbmUge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHJpZ2h0OiB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogdmFyKC0tc3BhY2UtZXh0cmEtc21hbGwpO1xuICBoZWlnaHQ6IDFweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyKTtcbn1cbi5kcm9wZG93bjpub3QoLmRpc2FibGVkKTpob3ZlciAudW5kZXJsaW5lLFxuLmRyb3Bkb3duOm5vdCguZGlzYWJsZWQpOmZvY3VzIC51bmRlcmxpbmUge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbn1cblxuLm1lbnUge1xuICBtYXgtd2lkdGg6IDA7XG4gIG1heC1oZWlnaHQ6IDA7XG59XG4iXX0= */`;
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0L3RleHQubW9kdWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQiw4QkFBOEI7RUFDOUIsb0JBQW9CO0VBQ3BCLDBCQUEwQjtBQUM1QjtBQUNBO0VBQ0UsY0FBYztFQUNkLFNBQVM7RUFDVCxnQkFBZ0I7RUFDaEIsV0FBVztFQUNYLG9CQUFvQjtBQUN0Qjs7QUFFQTtFQUNFLGtDQUFrQztBQUNwQzs7QUFFQTtFQUNFLGdCQUFnQjtBQUNsQjtBQUNBO0VBQ0Usa0JBQWtCO0FBQ3BCO0FBQ0E7RUFDRSxpQkFBaUI7QUFDbkIiLCJmaWxlIjoibm9kZV9tb2R1bGVzL0BjcmVhdGUtZmlnbWEtcGx1Z2luL3VpL2xpYi9jb21wb25lbnRzL3RleHQvdGV4dC5tb2R1bGUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnRleHQge1xuICBwYWRkaW5nLXRvcDogMXB4O1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dCk7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoNHB4KTtcbn1cbi50ZXh0OmJlZm9yZSB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBoZWlnaHQ6IDA7XG4gIG1hcmdpbi10b3A6IC05cHg7XG4gIGNvbnRlbnQ6ICcnO1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbn1cblxuLm51bWVyaWMge1xuICBmb250LXZhcmlhbnQtbnVtZXJpYzogdGFidWxhci1udW1zO1xufVxuXG4ubGVmdCB7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG59XG4uY2VudGVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuLnJpZ2h0IHtcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG59XG4iXX0= */`;
         document.head.append(element);
       }
-      dropdown_module_default = { "dropdown": "_dropdown_idjri_1", "disabled": "_disabled_idjri_12", "icon": "_icon_idjri_21", "empty": "_empty_idjri_33", "value": "_value_idjri_37", "hasIcon": "_hasIcon_idjri_51", "placeholder": "_placeholder_idjri_55", "chevronIcon": "_chevronIcon_idjri_59", "border": "_border_idjri_70", "hasBorder": "_hasBorder_idjri_79", "underline": "_underline_idjri_84", "menu": "_menu_idjri_97" };
+      text_module_default = { "text": "_text_mh6mm_1", "numeric": "_numeric_mh6mm_15", "left": "_left_mh6mm_19", "center": "_center_mh6mm_22", "right": "_right_mh6mm_25" };
     }
   });
 
-  // node_modules/@create-figma-plugin/ui/lib/components/dropdown/private/constants.js
-  var INVALID_ID, ITEM_ID_DATA_ATTRIBUTE_NAME, VIEWPORT_MARGIN;
-  var init_constants = __esm({
-    "node_modules/@create-figma-plugin/ui/lib/components/dropdown/private/constants.js"() {
-      INVALID_ID = null;
-      ITEM_ID_DATA_ATTRIBUTE_NAME = "data-dropdown-item-id";
-      VIEWPORT_MARGIN = 16;
-    }
-  });
-
-  // node_modules/@create-figma-plugin/ui/lib/components/dropdown/private/update-menu-element-layout.js
-  function updateMenuElementLayout(rootElement, menuElement, selectedId) {
-    const menuElementMaxWidth = window.innerWidth - 2 * VIEWPORT_MARGIN;
-    const menuElementMaxHeight = window.innerHeight - 2 * VIEWPORT_MARGIN;
-    menuElement.style.maxWidth = `${menuElementMaxWidth}px`;
-    menuElement.style.maxHeight = `${menuElementMaxHeight}px`;
-    const selectedLabelElement = getSelectedLabelElement(menuElement, selectedId);
-    const rootElementBoundingClientRect = rootElement.getBoundingClientRect();
-    const isScrollable = menuElement.offsetHeight === menuElementMaxHeight;
-    const left = computeMenuElementLeft({
-      menuWidth: menuElement.offsetWidth,
-      rootLeft: rootElementBoundingClientRect.left
-    });
-    const top = computeMenuElementTop({
-      isScrollable,
-      menuHeight: menuElement.offsetHeight,
-      rootHeight: rootElement.offsetHeight,
-      rootTop: rootElementBoundingClientRect.top,
-      selectedTop: selectedLabelElement === null ? null : selectedLabelElement.offsetTop
-    });
-    menuElement.style.left = `${left}px`;
-    menuElement.style.top = `${top}px`;
-    if (selectedLabelElement !== null && isScrollable === true) {
-      menuElement.scrollTop = computeMenuElementScrollTop({
-        menuHeight: menuElement.offsetHeight,
-        menuScrollHeight: menuElement.scrollHeight,
-        menuTop: menuElement.getBoundingClientRect().top,
-        rootHeight: rootElement.offsetHeight,
-        rootTop: rootElementBoundingClientRect.top,
-        selectedHeight: selectedLabelElement.offsetHeight,
-        selectedTop: selectedLabelElement.offsetTop
-      });
-    }
+  // node_modules/@create-figma-plugin/ui/lib/components/text/text.js
+  function Text(_a) {
+    var _b = _a, { align = "left", children, numeric = false } = _b, rest = __objRest(_b, ["align", "children", "numeric"]);
+    return y("div", __spreadProps(__spreadValues({}, rest), { class: createClassName([
+      text_module_default.text,
+      text_module_default[align],
+      numeric === true ? text_module_default.numeric : null
+    ]) }), children);
   }
-  function getSelectedLabelElement(menuElement, selectedId) {
-    if (selectedId === INVALID_ID) {
-      return null;
-    }
-    const selectedInputElement = menuElement.querySelector(`[${ITEM_ID_DATA_ATTRIBUTE_NAME}='${selectedId}']`);
-    if (selectedInputElement === null) {
-      throw new Error("Invariant violation");
-    }
-    const selectedLabelElement = selectedInputElement.parentElement;
-    if (selectedLabelElement === null) {
-      throw new Error("Invariant violation");
-    }
-    return selectedLabelElement;
-  }
-  function computeMenuElementLeft(options) {
-    const { rootLeft, menuWidth } = options;
-    if (rootLeft <= VIEWPORT_MARGIN) {
-      return negate(rootLeft) + VIEWPORT_MARGIN;
-    }
-    const left = negate(rootLeft + menuWidth - (window.innerWidth - VIEWPORT_MARGIN));
-    return Math.min(left, 0);
-  }
-  function computeMenuElementTop(options) {
-    const viewportHeight = window.innerHeight;
-    const { isScrollable, menuHeight, rootHeight, rootTop, selectedTop } = options;
-    if (rootTop <= VIEWPORT_MARGIN) {
-      return negate(rootTop) + VIEWPORT_MARGIN;
-    }
-    if (rootTop + rootHeight >= viewportHeight - VIEWPORT_MARGIN) {
-      return negate(rootTop - (viewportHeight - VIEWPORT_MARGIN - menuHeight));
-    }
-    const minimumTop = negate(rootTop - VIEWPORT_MARGIN);
-    const maximumTop = viewportHeight - VIEWPORT_MARGIN - menuHeight - rootTop;
-    if (selectedTop === null || isScrollable === true) {
-      const top = Math.min(negate((menuHeight - rootHeight) / 2), 0);
-      return restrictToRange(top, minimumTop, maximumTop);
-    }
-    return restrictToRange(negate(selectedTop), minimumTop, maximumTop);
-  }
-  function computeMenuElementScrollTop(options) {
-    const viewportHeight = window.innerHeight;
-    const { menuHeight, menuScrollHeight, menuTop, rootHeight, rootTop, selectedTop, selectedHeight } = options;
-    const minimumScrollTop = 0;
-    const maximumScrollTop = menuScrollHeight - menuHeight;
-    if (rootTop <= menuTop) {
-      return restrictToRange(selectedTop, minimumScrollTop, maximumScrollTop);
-    }
-    if (rootTop + rootHeight >= viewportHeight - VIEWPORT_MARGIN) {
-      return restrictToRange(selectedTop + selectedHeight - menuHeight, minimumScrollTop, maximumScrollTop);
-    }
-    return restrictToRange(selectedTop - rootTop + menuTop, minimumScrollTop, maximumScrollTop);
-  }
-  function negate(number) {
-    return -1 * number;
-  }
-  function restrictToRange(number, minimum, maximum) {
-    return Math.min(Math.max(number, minimum), maximum);
-  }
-  var init_update_menu_element_layout = __esm({
-    "node_modules/@create-figma-plugin/ui/lib/components/dropdown/private/update-menu-element-layout.js"() {
-      init_constants();
-    }
-  });
-
-  // node_modules/@create-figma-plugin/ui/lib/components/dropdown/dropdown.js
-  function Dropdown(_a) {
-    var _b = _a, { disabled = false, icon, name, options, onChange = function() {
-    }, onValueChange = function() {
-    }, placeholder, value, variant } = _b, rest = __objRest(_b, ["disabled", "icon", "name", "options", "onChange", "onValueChange", "placeholder", "value", "variant"]);
-    if (typeof icon === "string" && icon.length !== 1) {
-      throw new Error(`String \`icon\` must be a single character: ${icon}`);
-    }
-    const rootElementRef = _(null);
-    const menuElementRef = _(null);
-    const [isMenuVisible, setIsMenuVisible] = h2(false);
-    const index = findOptionIndexByValue(options, value);
-    if (value !== null && index === -1) {
-      throw new Error(`Invalid \`value\`: ${value}`);
-    }
-    const [selectedId, setSelectedId] = h2(index === -1 ? INVALID_ID : `${index}`);
-    const children = typeof options[index] === "undefined" ? "" : getDropdownOptionValue(options[index]);
-    const { handleScrollableMenuKeyDown, handleScrollableMenuItemMouseMove } = useScrollableMenu({
-      itemIdDataAttributeName: ITEM_ID_DATA_ATTRIBUTE_NAME,
-      menuElementRef,
-      selectedId,
-      setSelectedId
-    });
-    const triggerBlur = T2(function() {
-      setIsMenuVisible(false);
-      setSelectedId(INVALID_ID);
-      getCurrentFromRef(rootElementRef).blur();
-    }, []);
-    const triggerUpdateMenuElementLayout = T2(function(selectedId2) {
-      const rootElement = getCurrentFromRef(rootElementRef);
-      const menuElement = getCurrentFromRef(menuElementRef);
-      updateMenuElementLayout(rootElement, menuElement, selectedId2);
-    }, []);
-    const handleRootFocus = T2(function() {
-      if (isMenuVisible === true) {
-        return;
-      }
-      setIsMenuVisible(true);
-      if (value === null) {
-        triggerUpdateMenuElementLayout(selectedId);
-        return;
-      }
-      const index2 = findOptionIndexByValue(options, value);
-      if (index2 === -1) {
-        throw new Error(`Invalid \`value\`: ${value}`);
-      }
-      const newSelectedId = `${index2}`;
-      setSelectedId(newSelectedId);
-      triggerUpdateMenuElementLayout(newSelectedId);
-    }, [isMenuVisible, options, selectedId, triggerUpdateMenuElementLayout, value]);
-    const handleRootKeyDown = T2(function(event) {
-      if (event.key === "Escape" || event.key === "Tab") {
-        triggerBlur();
-        return;
-      }
-      if (event.key === "Enter") {
-        if (selectedId !== INVALID_ID) {
-          const selectedElement = getCurrentFromRef(menuElementRef).querySelector(`[${ITEM_ID_DATA_ATTRIBUTE_NAME}='${selectedId}']`);
-          if (selectedElement === null) {
-            throw new Error("Invariant violation");
-          }
-          selectedElement.checked = true;
-          const changeEvent = document.createEvent("Event");
-          changeEvent.initEvent("change", true, true);
-          selectedElement.dispatchEvent(changeEvent);
-        }
-        triggerBlur();
-        return;
-      }
-      handleScrollableMenuKeyDown(event);
-    }, [handleScrollableMenuKeyDown, selectedId, triggerBlur]);
-    const handleRootMouseDown = T2(function(event) {
-      if (isMenuVisible === false) {
-        return;
-      }
-      event.preventDefault();
-      triggerBlur();
-    }, [isMenuVisible, triggerBlur]);
-    const handleMenuMouseDown = T2(function(event) {
-      event.stopPropagation();
-    }, []);
-    const handleOptionChange = T2(function(event) {
-      const id = event.currentTarget.getAttribute(ITEM_ID_DATA_ATTRIBUTE_NAME);
-      const optionValue = options[parseInt(id, 10)];
-      const newValue = optionValue.value;
-      onValueChange(newValue, name);
-      onChange(event);
-      triggerBlur();
-    }, [name, onChange, onValueChange, options, triggerBlur]);
-    const handleMouseDownOutside = T2(function() {
-      if (isMenuVisible === false) {
-        return;
-      }
-      triggerBlur();
-    }, [isMenuVisible, triggerBlur]);
-    useMouseDownOutside({
-      onMouseDownOutside: handleMouseDownOutside,
-      ref: rootElementRef
-    });
-    return y(
-      "div",
-      __spreadProps(__spreadValues({}, rest), { ref: rootElementRef, class: createClassName([
-        dropdown_module_default.dropdown,
-        typeof variant === "undefined" ? null : variant === "border" ? dropdown_module_default.hasBorder : null,
-        typeof icon === "undefined" ? null : dropdown_module_default.hasIcon,
-        disabled === true ? dropdown_module_default.disabled : null
-      ]), onFocus: handleRootFocus, onKeyDown: disabled === true ? void 0 : handleRootKeyDown, onMouseDown: handleRootMouseDown, tabIndex: disabled === true ? -1 : 0 }),
-      typeof icon === "undefined" ? null : y("div", { class: dropdown_module_default.icon }, icon),
-      value === null ? typeof placeholder === "undefined" ? y("div", { class: dropdown_module_default.empty }) : y("div", { class: createClassName([
-        dropdown_module_default.value,
-        dropdown_module_default.placeholder
-      ]) }, placeholder) : y("div", { class: dropdown_module_default.value }, children),
-      y(
-        "div",
-        { class: dropdown_module_default.chevronIcon },
-        y(IconControlChevronDown8, null)
-      ),
-      variant === "underline" ? y("div", { class: dropdown_module_default.underline }) : null,
-      y("div", { class: dropdown_module_default.border }),
-      y("div", { ref: menuElementRef, class: createClassName([
-        menu_module_default.menu,
-        dropdown_module_default.menu,
-        disabled === true || isMenuVisible === false ? menu_module_default.hidden : null
-      ]), onMouseDown: handleMenuMouseDown }, options.map(function(option, index2) {
-        if ("separator" in option) {
-          return y("hr", { key: index2, class: menu_module_default.optionSeparator });
-        }
-        if ("header" in option) {
-          return y("h1", { key: index2, class: menu_module_default.optionHeader }, option.header);
-        }
-        return y(
-          "label",
-          { key: index2, class: createClassName([
-            menu_module_default.optionValue,
-            option.disabled === true ? menu_module_default.optionValueDisabled : null,
-            option.disabled !== true && `${index2}` === selectedId ? menu_module_default.optionValueSelected : null
-          ]) },
-          y("input", { checked: value === option.value, class: menu_module_default.input, disabled: option.disabled === true, name, onChange: value === option.value ? void 0 : handleOptionChange, onClick: value === option.value ? triggerBlur : void 0, onMouseMove: handleScrollableMenuItemMouseMove, tabIndex: -1, type: "radio", value: `${option.value}`, [ITEM_ID_DATA_ATTRIBUTE_NAME]: `${index2}` }),
-          option.value === value ? y(
-            "div",
-            { class: menu_module_default.checkIcon },
-            y(IconMenuCheckmarkChecked16, null)
-          ) : null,
-          typeof option.text === "undefined" ? option.value : option.text
-        );
-      }))
-    );
-  }
-  function getDropdownOptionValue(option) {
-    if ("text" in option) {
-      return option.text;
-    }
-    if ("value" in option) {
-      return option.value;
-    }
-    throw new Error("Invariant violation");
-  }
-  function findOptionIndexByValue(options, value) {
-    if (value === null) {
-      return -1;
-    }
-    let index = 0;
-    for (const option of options) {
-      if ("value" in option && option.value === value) {
-        return index;
-      }
-      index += 1;
-    }
-    return -1;
-  }
-  var init_dropdown = __esm({
-    "node_modules/@create-figma-plugin/ui/lib/components/dropdown/dropdown.js"() {
+  var init_text = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/text/text.js"() {
       init_preact_module();
-      init_hooks_module();
-      init_menu_module();
-      init_use_mouse_down_outside();
-      init_use_scrollable_menu();
-      init_icon_control_chevron_down_8();
-      init_icon_menu_checkmark_checked_16();
       init_create_class_name();
-      init_get_current_from_ref();
-      init_dropdown_module();
-      init_constants();
-      init_update_menu_element_layout();
+      init_text_module();
     }
   });
 
@@ -1456,17 +836,253 @@
     }
   });
 
+  // node_modules/@create-figma-plugin/utilities/lib/mixed-values.js
+  var MIXED_STRING;
+  var init_mixed_values = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/mixed-values.js"() {
+      MIXED_STRING = "999999999999999";
+    }
+  });
+
   // node_modules/@create-figma-plugin/utilities/lib/index.js
   var init_lib = __esm({
     "node_modules/@create-figma-plugin/utilities/lib/index.js"() {
       init_events();
+      init_mixed_values();
     }
   });
 
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/7a15c68f-c116-4b97-a590-1995cb49ebe3/container.module.js
+  // node_modules/@create-figma-plugin/ui/lib/components/textbox/private/is-keycode-character-generating.js
+  function isKeyCodeCharacterGenerating(keyCode) {
+    return keyCode === 32 || keyCode >= 48 && keyCode <= 57 || keyCode >= 65 && keyCode <= 90 || keyCode >= 96 && keyCode <= 105 || keyCode >= 186 && keyCode <= 192 || keyCode >= 219 && keyCode <= 222;
+  }
+  var init_is_keycode_character_generating = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/textbox/private/is-keycode-character-generating.js"() {
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox/private/raw-textbox.js
+  function RawTextbox(_a) {
+    var _b = _a, { disabled = false, name, onInput = function() {
+    }, onValueInput = function() {
+    }, password = false, placeholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, spellCheck = false, validateOnBlur, value } = _b, rest = __objRest(_b, ["disabled", "name", "onInput", "onValueInput", "password", "placeholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "spellCheck", "validateOnBlur", "value"]);
+    const inputElementRef = _(null);
+    const revertOnEscapeKeyDownRef = _(false);
+    const [originalValue, setOriginalValue] = h2(EMPTY_STRING);
+    const setInputElementValue = T2(function(value2) {
+      const inputElement = getCurrentFromRef(inputElementRef);
+      inputElement.value = value2;
+      const inputEvent = document.createEvent("Event");
+      inputEvent.initEvent("input", true, true);
+      inputElement.dispatchEvent(inputEvent);
+    }, []);
+    const handleBlur = T2(function() {
+      if (revertOnEscapeKeyDownRef.current === true) {
+        revertOnEscapeKeyDownRef.current = false;
+        return;
+      }
+      if (typeof validateOnBlur !== "undefined") {
+        const result = validateOnBlur(value);
+        if (typeof result === "string") {
+          setInputElementValue(result);
+          setOriginalValue(EMPTY_STRING);
+          return;
+        }
+        if (result === false) {
+          if (value !== originalValue) {
+            setInputElementValue(originalValue);
+          }
+          setOriginalValue(EMPTY_STRING);
+          return;
+        }
+      }
+      setOriginalValue(EMPTY_STRING);
+    }, [originalValue, setInputElementValue, validateOnBlur, value]);
+    const handleFocus = T2(function(event) {
+      setOriginalValue(value);
+      event.currentTarget.select();
+    }, [value]);
+    const handleInput = T2(function(event) {
+      onValueInput(event.currentTarget.value, name);
+      onInput(event);
+    }, [name, onInput, onValueInput]);
+    const handleKeyDown = T2(function(event) {
+      const key = event.key;
+      if (key === "Escape") {
+        if (propagateEscapeKeyDown === false) {
+          event.stopPropagation();
+        }
+        if (revertOnEscapeKeyDown === true) {
+          revertOnEscapeKeyDownRef.current = true;
+          setInputElementValue(originalValue);
+          setOriginalValue(EMPTY_STRING);
+        }
+        event.currentTarget.blur();
+        return;
+      }
+      if (key === "Enter") {
+        event.currentTarget.blur();
+        return;
+      }
+      if (value === MIXED_STRING && isKeyCodeCharacterGenerating(event.keyCode) === false) {
+        event.preventDefault();
+        event.currentTarget.select();
+      }
+    }, [
+      originalValue,
+      propagateEscapeKeyDown,
+      revertOnEscapeKeyDown,
+      setInputElementValue,
+      value
+    ]);
+    const handleMouseUp = T2(function(event) {
+      if (value === MIXED_STRING) {
+        event.preventDefault();
+      }
+    }, [value]);
+    return y("input", __spreadProps(__spreadValues({}, rest), { ref: inputElementRef, disabled: disabled === true, name, onBlur: handleBlur, onFocus: handleFocus, onInput: handleInput, onKeyDown: handleKeyDown, onMouseUp: handleMouseUp, placeholder, spellcheck: spellCheck, tabIndex: disabled === true ? -1 : 0, type: password === true ? "password" : "text", value: value === MIXED_STRING ? "Mixed" : value }));
+  }
+  var EMPTY_STRING;
+  var init_raw_textbox = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox/private/raw-textbox.js"() {
+      init_lib();
+      init_preact_module();
+      init_hooks_module();
+      init_get_current_from_ref();
+      init_is_keycode_character_generating();
+      EMPTY_STRING = "";
+    }
+  });
+
+  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/3feaec75-161e-4d16-8358-ad7bb1481b96/textbox.module.js
+  var textbox_module_default;
+  var init_textbox_module = __esm({
+    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/3feaec75-161e-4d16-8358-ad7bb1481b96/textbox.module.js"() {
+      if (document.getElementById("c90d05b143") === null) {
+        const element = document.createElement("style");
+        element.id = "c90d05b143";
+        element.textContent = `._textbox_sir3b_1 {
+  position: relative;
+  z-index: var(--z-index-1);
+}
+._textbox_sir3b_1:focus-within {
+  z-index: var(--z-index-2); /* Stack \`.textbox\` over its sibling elements */
+}
+
+._input_sir3b_9 {
+  display: block;
+  width: 100%;
+  height: 28px;
+  padding: 0 var(--space-extra-small);
+  background-color: transparent;
+  color: var(--figma-color-text);
+}
+._disabled_sir3b_17 ._input_sir3b_9 {
+  color: var(--figma-color-text-disabled);
+  cursor: not-allowed;
+}
+._hasIcon_sir3b_21 ._input_sir3b_9 {
+  padding-left: 32px;
+}
+
+._input_sir3b_9::placeholder {
+  color: var(--figma-color-text-tertiary);
+}
+
+._icon_sir3b_29 {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  color: var(--figma-color-icon-secondary);
+  pointer-events: none; /* so that clicking the icon focuses the textbox */
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+._textbox_sir3b_1:not(._disabled_sir3b_17) ._input_sir3b_9:focus ~ ._icon_sir3b_29 {
+  color: var(--figma-color-icon-brand);
+}
+._disabled_sir3b_17 ._icon_sir3b_29 {
+  color: var(--figma-color-icon-disabled);
+}
+
+._icon_sir3b_29 svg {
+  fill: currentColor;
+}
+
+._border_sir3b_49 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-2);
+  pointer-events: none;
+}
+._hasBorder_sir3b_59 ._border_sir3b_49,
+._textbox_sir3b_1:not(._disabled_sir3b_17):hover ._border_sir3b_49 {
+  border-color: var(--figma-color-border);
+}
+._textbox_sir3b_1:not(._disabled_sir3b_17) ._input_sir3b_9:focus ~ ._border_sir3b_49 {
+  top: -1px;
+  bottom: -1px;
+  border-width: 2px;
+  border-color: var(--figma-color-border-brand-strong);
+}
+
+._underline_sir3b_70 {
+  position: absolute;
+  right: var(--space-extra-small);
+  bottom: 0;
+  left: var(--space-extra-small);
+  height: 1px;
+  background-color: var(--figma-color-border);
+}
+._textbox_sir3b_1:not(._disabled_sir3b_17) ._input_sir3b_9:focus ~ ._underline_sir3b_70,
+._textbox_sir3b_1:not(._disabled_sir3b_17):hover ._underline_sir3b_70 {
+  background-color: transparent;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0Ym94L3RleHRib3gvdGV4dGJveC5tb2R1bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0VBQ2xCLHlCQUF5QjtBQUMzQjtBQUNBO0VBQ0UseUJBQXlCLEVBQUUsK0NBQStDO0FBQzVFOztBQUVBO0VBQ0UsY0FBYztFQUNkLFdBQVc7RUFDWCxZQUFZO0VBQ1osbUNBQW1DO0VBQ25DLDZCQUE2QjtFQUM3Qiw4QkFBOEI7QUFDaEM7QUFDQTtFQUNFLHVDQUF1QztFQUN2QyxtQkFBbUI7QUFDckI7QUFDQTtFQUNFLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLHVDQUF1QztBQUN6Qzs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsVUFBVTtFQUNWLHdDQUF3QztFQUN4QyxvQkFBb0IsRUFBRSxrREFBa0Q7RUFDeEUsa0JBQWtCO0VBQ2xCLGdDQUFnQztBQUNsQztBQUNBO0VBQ0Usb0NBQW9DO0FBQ3RDO0FBQ0E7RUFDRSx1Q0FBdUM7QUFDekM7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsTUFBTTtFQUNOLFFBQVE7RUFDUixTQUFTO0VBQ1QsT0FBTztFQUNQLDZCQUE2QjtFQUM3QixxQ0FBcUM7RUFDckMsb0JBQW9CO0FBQ3RCO0FBQ0E7O0VBRUUsdUNBQXVDO0FBQ3pDO0FBQ0E7RUFDRSxTQUFTO0VBQ1QsWUFBWTtFQUNaLGlCQUFpQjtFQUNqQixvREFBb0Q7QUFDdEQ7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsK0JBQStCO0VBQy9CLFNBQVM7RUFDVCw4QkFBOEI7RUFDOUIsV0FBVztFQUNYLDJDQUEyQztBQUM3QztBQUNBOztFQUVFLDZCQUE2QjtBQUMvQiIsImZpbGUiOiJub2RlX21vZHVsZXMvQGNyZWF0ZS1maWdtYS1wbHVnaW4vdWkvbGliL2NvbXBvbmVudHMvdGV4dGJveC90ZXh0Ym94L3RleHRib3gubW9kdWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi50ZXh0Ym94IHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB6LWluZGV4OiB2YXIoLS16LWluZGV4LTEpO1xufVxuLnRleHRib3g6Zm9jdXMtd2l0aGluIHtcbiAgei1pbmRleDogdmFyKC0tei1pbmRleC0yKTsgLyogU3RhY2sgYC50ZXh0Ym94YCBvdmVyIGl0cyBzaWJsaW5nIGVsZW1lbnRzICovXG59XG5cbi5pbnB1dCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAyOHB4O1xuICBwYWRkaW5nOiAwIHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0KTtcbn1cbi5kaXNhYmxlZCAuaW5wdXQge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC1kaXNhYmxlZCk7XG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XG59XG4uaGFzSWNvbiAuaW5wdXQge1xuICBwYWRkaW5nLWxlZnQ6IDMycHg7XG59XG5cbi5pbnB1dDo6cGxhY2Vob2xkZXIge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC10ZXJ0aWFyeSk7XG59XG5cbi5pY29uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDE0cHg7XG4gIGxlZnQ6IDE2cHg7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1pY29uLXNlY29uZGFyeSk7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lOyAvKiBzbyB0aGF0IGNsaWNraW5nIHRoZSBpY29uIGZvY3VzZXMgdGhlIHRleHRib3ggKi9cbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbn1cbi50ZXh0Ym94Om5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC5pY29uIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tYnJhbmQpO1xufVxuLmRpc2FibGVkIC5pY29uIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tZGlzYWJsZWQpO1xufVxuXG4uaWNvbiBzdmcge1xuICBmaWxsOiBjdXJyZW50Q29sb3I7XG59XG5cbi5ib3JkZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgYm9yZGVyOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMtMik7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xufVxuLmhhc0JvcmRlciAuYm9yZGVyLFxuLnRleHRib3g6bm90KC5kaXNhYmxlZCk6aG92ZXIgLmJvcmRlciB7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyKTtcbn1cbi50ZXh0Ym94Om5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC5ib3JkZXIge1xuICB0b3A6IC0xcHg7XG4gIGJvdHRvbTogLTFweDtcbiAgYm9yZGVyLXdpZHRoOiAycHg7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWJyYW5kLXN0cm9uZyk7XG59XG5cbi51bmRlcmxpbmUge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHJpZ2h0OiB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogdmFyKC0tc3BhY2UtZXh0cmEtc21hbGwpO1xuICBoZWlnaHQ6IDFweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyKTtcbn1cbi50ZXh0Ym94Om5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC51bmRlcmxpbmUsXG4udGV4dGJveDpub3QoLmRpc2FibGVkKTpob3ZlciAudW5kZXJsaW5lIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG59XG4iXX0= */`;
+        document.head.append(element);
+      }
+      textbox_module_default = { "textbox": "_textbox_sir3b_1", "input": "_input_sir3b_9", "disabled": "_disabled_sir3b_17", "hasIcon": "_hasIcon_sir3b_21", "icon": "_icon_sir3b_29", "border": "_border_sir3b_49", "hasBorder": "_hasBorder_sir3b_59", "underline": "_underline_sir3b_70" };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox/textbox.js
+  function Textbox(_a) {
+    var _b = _a, { icon, variant } = _b, rest = __objRest(_b, ["icon", "variant"]);
+    if (typeof icon === "string" && icon.length !== 1) {
+      throw new Error(`String \`icon\` must be a single character: ${icon}`);
+    }
+    return y(
+      "div",
+      { class: createClassName([
+        textbox_module_default.textbox,
+        typeof variant === "undefined" ? null : variant === "border" ? textbox_module_default.hasBorder : null,
+        typeof icon === "undefined" ? null : textbox_module_default.hasIcon,
+        rest.disabled === true ? textbox_module_default.disabled : null
+      ]) },
+      y(RawTextbox, __spreadProps(__spreadValues({}, rest), { class: textbox_module_default.input })),
+      typeof icon === "undefined" ? null : y("div", { class: textbox_module_default.icon }, icon),
+      y("div", { class: textbox_module_default.border }),
+      variant === "underline" ? y("div", { class: textbox_module_default.underline }) : null
+    );
+  }
+  var init_textbox = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox/textbox.js"() {
+      init_preact_module();
+      init_create_class_name();
+      init_raw_textbox();
+      init_textbox_module();
+    }
+  });
+
+  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/00e8e101-278e-4bd3-948a-3b7413297dbc/container.module.js
   var container_module_default;
   var init_container_module = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/7a15c68f-c116-4b97-a590-1995cb49ebe3/container.module.js"() {
+    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/00e8e101-278e-4bd3-948a-3b7413297dbc/container.module.js"() {
       if (document.getElementById("2c2d94c5f9") === null) {
         const element = document.createElement("style");
         element.id = "2c2d94c5f9";
@@ -1505,10 +1121,10 @@
     }
   });
 
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/617bb923-8cae-4724-8b6f-a234cdf6e76d/vertical-space.module.js
+  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/efcabc90-025a-428d-8a86-fd04083a651d/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/617bb923-8cae-4724-8b6f-a234cdf6e76d/vertical-space.module.js"() {
+    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/efcabc90-025a-428d-8a86-fd04083a651d/vertical-space.module.js"() {
       if (document.getElementById("9022860d04") === null) {
         const element = document.createElement("style");
         element.id = "9022860d04";
@@ -1547,9 +1163,9 @@
     }
   });
 
-  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/db7d39f2-f45f-47d1-845f-6313494e5eb0/base.js
+  // ../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/943aaaea-6250-4785-9f2f-574fab6fc44f/base.js
   var init_base = __esm({
-    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/db7d39f2-f45f-47d1-845f-6313494e5eb0/base.js"() {
+    "../../../../private/var/folders/fy/vsr2vh4167g18k5v_spbm_0r0000gn/T/943aaaea-6250-4785-9f2f-574fab6fc44f/base.js"() {
       if (document.getElementById("417038d6a2") === null) {
         const element = document.createElement("style");
         element.id = "417038d6a2";
@@ -1681,7 +1297,8 @@ svg {
   var init_lib2 = __esm({
     "node_modules/@create-figma-plugin/ui/lib/index.js"() {
       init_button();
-      init_dropdown();
+      init_text();
+      init_textbox();
       init_container();
       init_vertical_space();
       init_render();
@@ -1694,17 +1311,10 @@ svg {
     default: () => ui_default
   });
   function Plugin() {
-    const [value, setValue] = h2(null);
+    const [value, setValue] = h2("");
     const handleCloseButtonClick = T2(function() {
       emit("CLOSE");
     }, []);
-    const options = [{
-      value: "Ceremonia"
-    }, {
-      value: "Outdoor Voices"
-    }, {
-      value: "Mansur Gavriel"
-    }];
     function handleChange(event) {
       const newValue = event.currentTarget.value;
       setValue(newValue);
@@ -1713,7 +1323,7 @@ svg {
     function handleCreatePopulateDataButtonClick() {
       emit("CREATE_POPULATE_DATA", value);
     }
-    return /* @__PURE__ */ y(Container, { space: "large" }, /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Dropdown, { onChange: handleChange, options, value, variant: "border" }), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Button, { fullWidth: true, onClick: handleCreatePopulateDataButtonClick }, "Populate"), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y(Button, { fullWidth: true, onClick: handleCloseButtonClick, secondary: true }, "Close"), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }));
+    return /* @__PURE__ */ y(Container, { space: "large" }, /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Text, null, "Enter search term"), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(Textbox, { onChange: handleChange, value, variant: "border" }), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Button, { fullWidth: true, onClick: handleCreatePopulateDataButtonClick }, "Populate"), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y(Button, { fullWidth: true, onClick: handleCloseButtonClick, secondary: true }, "Close"), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }));
   }
   var ui_default;
   var init_ui = __esm({

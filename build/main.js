@@ -240,20 +240,27 @@ var init_get_product_nodes = __esm({
 });
 
 // src/utilities/set-content.ts
-async function setContent(node, data, nodeCount) {
+async function setContent(node, data, index) {
   const result = [];
-  const index = Math.floor(Math.random() * nodeCount);
   const product = data.productSearchV2.nodes[index];
   console.log("Hello!");
   traverseNode(node, async (child) => {
-    if (child.type === "TEXT") {
+    if (child.type === "TEXT" && child.name === "productName") {
       await loadFontsAsync([child]);
       const text = product.title;
       child.characters = text;
       result.push(child);
-      console.log("Check 1");
-    } else if (child.type === "RECTANGLE") {
-      console.log("Check 2");
+    } else if (child.type === "TEXT" && child.name === "productPrice") {
+      await loadFontsAsync([child]);
+      const text = product.price.amount;
+      child.characters = text;
+      result.push(child);
+    } else if (child.type === "TEXT" && child.name === "merchantName") {
+      await loadFontsAsync([child]);
+      const text = product.shop.name;
+      child.characters = text;
+      result.push(child);
+    } else if (child.type === "RECTANGLE" && child.name === "productImage") {
       const imageUrl = product.images[0].url;
       const response = await fetch(imageUrl);
       const imageBuffer = await response.arrayBuffer();
@@ -309,17 +316,17 @@ function main_default() {
       },
       body: JSON.stringify({ query })
     });
-    const data = await response.json();
-    console.log(data);
-    nodes.forEach(async (node) => {
-      await setContent(node, data, nodeCount);
+    const { data } = await response.json();
+    nodes.forEach(async (node, index) => {
+      await setContent(node, data, index);
+      console.log(data);
     });
   });
   once("CLOSE", function() {
     figma.closePlugin();
   });
   showUI({
-    height: 200,
+    height: 190,
     width: 240
   });
 }

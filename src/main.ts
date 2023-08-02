@@ -41,10 +41,11 @@ export default function () {
       },
       body: JSON.stringify({ query }),
     });
-    const data = await response.json();
-    console.log(data);
-    nodes.forEach(async (node) => {
-      await setContent(node, data, nodeCount);
+    const {data} = await response.json();
+
+    nodes.forEach(async (node, index) => {
+      await setContent(node, data, index); 
+      console.log(data);
     });
   });
 
@@ -53,7 +54,7 @@ export default function () {
   });
 
   showUI({
-    height: 200,
+    height: 190,
     width: 240,
   });
 }

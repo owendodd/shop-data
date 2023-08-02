@@ -35,44 +35,59 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import { loadFontsAsync, traverseNode } from "@create-figma-plugin/utilities";
-export function setContent(node, data, nodeCount) {
+export function setContent(node, data, index) {
     return __awaiter(this, void 0, void 0, function () {
-        var result, index, product;
+        var result, product;
         var _this = this;
         return __generator(this, function (_a) {
             result = [];
-            index = Math.floor(Math.random() * nodeCount);
             product = data.productSearchV2.nodes[index];
             console.log("Hello!");
             traverseNode(node, function (child) { return __awaiter(_this, void 0, void 0, function () {
-                var text, imageUrl, response, imageBuffer, imageData, image;
+                var text, text, text, imageUrl, response, imageBuffer, imageData, image;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
-                            if (!(child.type === "TEXT")) return [3 /*break*/, 2];
+                            if (!(child.type === "TEXT" && child.name === "productName")) return [3 /*break*/, 2];
                             return [4 /*yield*/, loadFontsAsync([child])];
                         case 1:
                             _a.sent();
                             text = product.title;
                             child.characters = text;
                             result.push(child);
-                            console.log("Check 1");
-                            return [3 /*break*/, 5];
+                            return [3 /*break*/, 9];
                         case 2:
-                            if (!(child.type === "RECTANGLE")) return [3 /*break*/, 5];
-                            console.log("Check 2");
+                            if (!(child.type === "TEXT" && child.name === "productPrice")) return [3 /*break*/, 4];
+                            return [4 /*yield*/, loadFontsAsync([child])];
+                        case 3:
+                            _a.sent();
+                            text = product.price.amount;
+                            child.characters = text;
+                            result.push(child);
+                            return [3 /*break*/, 9];
+                        case 4:
+                            if (!(child.type === "TEXT" && child.name === "merchantName")) return [3 /*break*/, 6];
+                            return [4 /*yield*/, loadFontsAsync([child])];
+                        case 5:
+                            _a.sent();
+                            text = product.shop.name;
+                            child.characters = text;
+                            result.push(child);
+                            return [3 /*break*/, 9];
+                        case 6:
+                            if (!(child.type === "RECTANGLE" && child.name === "productImage")) return [3 /*break*/, 9];
                             imageUrl = product.images[0].url;
                             return [4 /*yield*/, fetch(imageUrl)];
-                        case 3:
+                        case 7:
                             response = _a.sent();
                             return [4 /*yield*/, response.arrayBuffer()];
-                        case 4:
+                        case 8:
                             imageBuffer = _a.sent();
                             imageData = new Uint8Array(imageBuffer);
                             image = figma.createImage(imageData);
                             child.fills = [{ type: "IMAGE", imageHash: image.hash, scaleMode: "FILL" }];
-                            _a.label = 5;
-                        case 5: return [2 /*return*/];
+                            _a.label = 9;
+                        case 9: return [2 /*return*/];
                     }
                 });
             }); });
