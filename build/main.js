@@ -241,6 +241,7 @@ var init_get_product_nodes = __esm({
 
 // src/utilities/set-content.ts
 async function setContent(node, data, nodeCount) {
+  const result = [];
   const index = Math.floor(Math.random() * nodeCount);
   const product = data.productSearchV2.nodes[index];
   console.log("Hello!");
@@ -249,9 +250,11 @@ async function setContent(node, data, nodeCount) {
       await loadFontsAsync([child]);
       const text = product.title;
       child.characters = text;
+      result.push(child);
+      console.log("Check 1");
     } else if (child.type === "RECTANGLE") {
+      console.log("Check 2");
       const imageUrl = product.images[0].url;
-      console.log(imageUrl);
       const response = await fetch(imageUrl);
       const imageBuffer = await response.arrayBuffer();
       const imageData = new Uint8Array(imageBuffer);
@@ -308,7 +311,7 @@ function main_default() {
     });
     const data = await response.json();
     console.log(data);
-    nodes.forEach(async (node, index) => {
+    nodes.forEach(async (node) => {
       await setContent(node, data, nodeCount);
     });
   });

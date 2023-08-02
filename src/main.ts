@@ -43,7 +43,7 @@ export default function () {
     });
     const data = await response.json();
     console.log(data);
-    nodes.forEach(async (node, index) => {
+    nodes.forEach(async (node) => {
       await setContent(node, data, nodeCount);
     });
   });

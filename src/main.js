@@ -64,7 +64,7 @@ export default function () {
                     case 2:
                         data = _a.sent();
                         console.log(data);
-                        nodes.forEach(function (node, index) { return __awaiter(_this, void 0, void 0, function () {
+                        nodes.forEach(function (node) { return __awaiter(_this, void 0, void 0, function () {
                             return __generator(this, function (_a) {
                                 switch (_a.label) {
                                     case 0: return [4 /*yield*/, setContent(node, data, nodeCount)];

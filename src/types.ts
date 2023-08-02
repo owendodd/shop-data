@@ -19,16 +19,12 @@ export interface Product {
     name: string;
   };
   images: {
-    width: number;
-    height: number;
     url: string;
   }[];
 }
 
-export interface ProductSearchV2 {
-  nodes: Product[];
-}
-
 export interface Products {
-  productSearchV2: ProductSearchV2;
+  productSearchV2: {
+    nodes: Product[];
+  };
 }

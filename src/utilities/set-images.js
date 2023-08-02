@@ -34,8 +34,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { loadFontsAsync, traverseNode } from "@create-figma-plugin/utilities";
-export function setContent(node, data, nodeCount) {
+import { traverseNode } from "@create-figma-plugin/utilities";
+export function setImages(node, data, nodeCount) {
     return __awaiter(this, void 0, void 0, function () {
         var result, index, product;
         var _this = this;
@@ -45,38 +45,29 @@ export function setContent(node, data, nodeCount) {
             product = data.productSearchV2.nodes[index];
             console.log("Hello!");
             traverseNode(node, function (child) { return __awaiter(_this, void 0, void 0, function () {
-                var text, imageUrl, response, imageBuffer, imageData, image;
+                var imageUrl, response, imageBuffer, imageData, image;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
-                            if (!(child.type === "TEXT")) return [3 /*break*/, 2];
-                            return [4 /*yield*/, loadFontsAsync([child])];
-                        case 1:
-                            _a.sent();
-                            text = product.title;
-                            child.characters = text;
-                            result.push(child);
-                            console.log("Check 1");
-                            return [3 /*break*/, 5];
-                        case 2:
-                            if (!(child.type === "RECTANGLE")) return [3 /*break*/, 5];
+                            if (!(child.type === "RECTANGLE")) return [3 /*break*/, 3];
                             console.log("Check 2");
                             imageUrl = product.images[0].url;
                             return [4 /*yield*/, fetch(imageUrl)];
-                        case 3:
+                        case 1:
                             response = _a.sent();
                             return [4 /*yield*/, response.arrayBuffer()];
-                        case 4:
+                        case 2:
                             imageBuffer = _a.sent();
                             imageData = new Uint8Array(imageBuffer);
                             image = figma.createImage(imageData);
                             child.fills = [{ type: "IMAGE", imageHash: image.hash, scaleMode: "FILL" }];
-                            _a.label = 5;
-                        case 5: return [2 /*return*/];
+                            result.push(child);
+                            _a.label = 3;
+                        case 3: return [2 /*return*/];
                     }
                 });
             }); });
-            return [2 /*return*/];
+            return [2 /*return*/, result];
         });
     });
 }
