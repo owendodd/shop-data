@@ -1,10 +1,10 @@
 import {
   Button,
-  Dropdown,
-  DropdownOption,
   Container,
   render,
   VerticalSpace,
+  Textbox,
+  Text
 } from "@create-figma-plugin/ui";
 import { emit } from "@create-figma-plugin/utilities";
 import { h, JSX } from "preact";
@@ -13,31 +13,25 @@ import { useCallback, useState } from "preact/hooks";
 import { CloseHandler, CreatePopulateDataHandler } from "./types";
 
 function Plugin() {
-  const [value, setValue] = useState<null | string>(null);
+  const [value, setValue] = useState<string>("");
   const handleCloseButtonClick = useCallback(function () {
     emit<CloseHandler>("CLOSE");
   }, []);
-  // const options: Array<DropdownOption> = [{
-  //   value: 'Ceremonia'
-  // }, {
-  //   value: 'Outdoor Voices'
-  // }, {
-  //   value: 'Mansur Gavriel'
-  // }];
-
   function handleChange(event: JSX.TargetedEvent<HTMLInputElement>) {
     const newValue = event.currentTarget.value;
     setValue(newValue);
   };
   
   function handleCreatePopulateDataButtonClick() {
-    emit("CREATE_POPULATE_DATA");
+    emit("CREATE_POPULATE_DATA", value);
   }
 
   return (
     <Container space="large">
       <VerticalSpace space="large" />
-      {/* <Dropdown onChange={handleChange} options={options} value={value} variant="border" /> */}
+      <Text>Enter search term</Text>
+      <VerticalSpace space="small" />
+      <Textbox onChange={handleChange} value={value} variant="border" />
       <VerticalSpace space="large" />
       <Button fullWidth onClick={handleCreatePopulateDataButtonClick}>
         Populate
@@ -52,3 +46,4 @@ function Plugin() {
 }
 
 export default render(Plugin);
+   

@@ -188,27 +188,6 @@ var init_lib = __esm({
   }
 });
 
-// src/utilities/set-text.ts
-async function setText(node, dataMap2) {
-  const result = [];
-  const index = Math.floor(Math.random() * dataMap2["product"].length);
-  traverseNode(node, async (child) => {
-    if (child.type === "TEXT") {
-      await loadFontsAsync([child]);
-      const text = dataMap2["product"][index][child.name];
-      child.characters = text;
-      result.push(child);
-    }
-  });
-  return result;
-}
-var init_set_text = __esm({
-  "src/utilities/set-text.ts"() {
-    "use strict";
-    init_lib();
-  }
-});
-
 // src/utilities/sort-nodes-by-position.ts
 function sortNodesByPosition(nodes, axis) {
   const parent = nodes[0].parent;
@@ -260,52 +239,42 @@ var init_get_product_nodes = __esm({
   }
 });
 
-// src/utilities/data-map.ts
-var dataMap;
-var init_data_map = __esm({
-  "src/utilities/data-map.ts"() {
+// src/utilities/set-content.ts
+async function setContent(node, data, index) {
+  const result = [];
+  const product = data.productSearchV2.nodes[index];
+  console.log("Hello!");
+  traverseNode(node, async (child) => {
+    if (child.type === "TEXT" && child.name === "productName") {
+      await loadFontsAsync([child]);
+      const text = product.title;
+      child.characters = text;
+      result.push(child);
+    } else if (child.type === "TEXT" && child.name === "productPrice") {
+      await loadFontsAsync([child]);
+      const text = product.price.amount;
+      child.characters = text;
+      result.push(child);
+    } else if (child.type === "TEXT" && child.name === "merchantName") {
+      await loadFontsAsync([child]);
+      const text = product.shop.name;
+      child.characters = text;
+      result.push(child);
+    } else if (child.type === "RECTANGLE" && child.name === "productImage") {
+      const imageUrl = product.images[0].url;
+      const response = await fetch(imageUrl);
+      const imageBuffer = await response.arrayBuffer();
+      const imageData = new Uint8Array(imageBuffer);
+      const image = figma.createImage(imageData);
+      child.fills = [{ type: "IMAGE", imageHash: image.hash, scaleMode: "FILL" }];
+    }
+  });
+  return;
+}
+var init_set_content = __esm({
+  "src/utilities/set-content.ts"() {
     "use strict";
-    dataMap = {
-      "product": [
-        {
-          productName: "iPhone 13 Pro Max",
-          merchantName: "Apple",
-          productPrice: "1099",
-          productImage: "https://cdn.pixabay.com/photo/2021/09/15/09/27/iphone-13-6627666_1280.jpg"
-        },
-        {
-          productName: "Samsung Galaxy S21 Ultra",
-          merchantName: "Samsung",
-          productPrice: "1199",
-          productImage: "https://cdn.pixabay.com/photo/2021/02/01/20/09/samsung-galaxy-s21-ultra-5977682_1280.jpg"
-        },
-        {
-          productName: "Sony PlayStation 5",
-          merchantName: "Best Buy",
-          productPrice: "499",
-          productImage: "https://cdn.pixabay.com/photo/2021/01/22/16/31/playstation-5-5949772_1280.jpg"
-        },
-        {
-          productName: "Bose QuietComfort 35 II",
-          merchantName: "Amazon",
-          productPrice: "299",
-          productImage: "https://cdn.pixabay.com/photo/2018/05/31/16/06/bose-3445097_1280.jpg"
-        },
-        {
-          productName: "Nintendo Switch",
-          merchantName: "Walmart",
-          productPrice: "299",
-          productImage: "https://cdn.pixabay.com/photo/2020/04/08/18/51/nintendo-switch-5027586_1280.jpg"
-        },
-        {
-          productName: "LG OLED TV",
-          merchantName: "Costco",
-          productPrice: "1499",
-          productImage: "https://cdn.pixabay.com/photo/2021/06/08/18/17/lg-oled-tv-6323071_1280.jpg"
-        }
-        // Add more products here
-      ]
-    };
+    init_lib();
   }
 });
 
@@ -315,17 +284,49 @@ __export(main_exports, {
   default: () => main_default
 });
 function main_default() {
-  on("CREATE_POPULATE_DATA", async function() {
+  on("CREATE_POPULATE_DATA", async function(value) {
     const nodes = getSelectedProductNodes();
+    const nodeCount = nodes.length;
+    const query = `
+    query Search {
+      productSearchV2(query: "${value}" first: ${nodeCount}) {
+        nodes {
+          id
+          title
+          price {
+            amount
+          }
+          shop {
+            name
+          }
+          images {
+            url
+          }
+        }
+      }
+    }
+    `;
+    const proxyUrl = "https://corsproxy.io/?";
+    const apiUrl = "https://server.shop.app/graphql";
+    const response = await fetch(proxyUrl + apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Device-Id": "graphiql-WEB"
+      },
+      body: JSON.stringify({ query })
+    });
+    const { data } = await response.json();
     nodes.forEach(async (node, index) => {
-      await setText(node, dataMap);
+      await setContent(node, data, index);
+      console.log(data);
     });
   });
   once("CLOSE", function() {
     figma.closePlugin();
   });
   showUI({
-    height: 165,
+    height: 190,
     width: 240
   });
 }
@@ -333,9 +334,8 @@ var init_main = __esm({
   "src/main.ts"() {
     "use strict";
     init_lib();
-    init_set_text();
     init_get_product_nodes();
-    init_data_map();
+    init_set_content();
   }
 });
 
