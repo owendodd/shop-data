@@ -221,7 +221,7 @@ function getSelectedProductNodes() {
   const nodes = figma.currentPage.selection.slice();
   for (const node of nodes) {
     traverseNode(node, function(node2) {
-      if (node2.name && node2.name === "product") {
+      if (node2.name && node2.name === "ProductCard") {
         result.push(node2);
       }
     });
@@ -245,22 +245,22 @@ async function setContent(node, data, index) {
   const product = data.productSearchV2.nodes[index];
   console.log("Hello!");
   traverseNode(node, async (child) => {
-    if (child.type === "TEXT" && child.name === "productName") {
+    if (child.type === "TEXT" && child.name === "Product Name") {
       await loadFontsAsync([child]);
       const text = product.title;
       child.characters = text;
       result.push(child);
-    } else if (child.type === "TEXT" && child.name === "productPrice") {
+    } else if (child.type === "TEXT" && child.name === "Full Price") {
       await loadFontsAsync([child]);
-      const text = product.price.amount;
+      const text = `$${product.price.amount}`;
       child.characters = text;
       result.push(child);
-    } else if (child.type === "TEXT" && child.name === "merchantName") {
+    } else if (child.type === "TEXT" && child.name === "Merchant Name") {
       await loadFontsAsync([child]);
       const text = product.shop.name;
       child.characters = text;
       result.push(child);
-    } else if (child.type === "RECTANGLE" && child.name === "productImage") {
+    } else if (child.type === "RECTANGLE" && child.name === "image") {
       const imageUrl = product.images[0].url;
       const response = await fetch(imageUrl);
       const imageBuffer = await response.arrayBuffer();

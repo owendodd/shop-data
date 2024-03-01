@@ -6,7 +6,7 @@ export function getSelectedProductNodes() {
     for (var _i = 0, nodes_1 = nodes; _i < nodes_1.length; _i++) {
         var node = nodes_1[_i];
         traverseNode(node, function (node) {
-            if (node.name && node.name === "product") {
+            if (node.name && node.name === "ProductCard") {
                 result.push(node);
             }
         });

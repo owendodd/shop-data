@@ -7,7 +7,7 @@ export function getSelectedProductNodes(): Array<SceneNode> {
   const nodes = figma.currentPage.selection.slice();
   for (const node of nodes) {
     traverseNode(node, function (node: SceneNode) {
-      if (node.name && node.name === "product") {
+      if (node.name && node.name === "ProductCard") {
         result.push(node)
       }
     })
